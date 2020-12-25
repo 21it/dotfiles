@@ -14,7 +14,7 @@ sudo apt-get update -y
 
 (
   echo "==> Installing i3wm ..."
-  sudo apt-get install -y i3
+  sudo apt-get install -y i3 unclutter-xfixes
   echo "==> Installing i3wm-config ..."
   mkdir -p ~/.config/i3/
   cp "$DOTFILES_DIR/i3wm-config" ~/.config/i3/config
