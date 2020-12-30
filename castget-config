@@ -1,0 +1,23 @@
+[4keelekodi]
+url=https://services.err.ee/podcast/series/4keelekodi.xml
+spool=/Users/i.tkachuk/podcast/4keelekodi
+filename=%(date) %(title).mp3
+playlist=4keelekodi
+id3leadartist=4keelekodi
+id3album=4keelekodi
+
+[lightning-junkies]
+url=https://anchor.fm/s/ce6ee00/podcast/rss
+spool=/Users/i.tkachuk/podcast/lightning-junkies
+filename=%(title) %(date).mp3
+playlist=lightning-junkies
+id3leadartist=lightning-junkies
+id3album=lightning-junkies
+
+[*]
+filename=%(channel_title) - %(title) %(date).mp3
+id3contenttype=podcast
+id3contentgroup=
+id3title=
+id3year=
+id3comment=
