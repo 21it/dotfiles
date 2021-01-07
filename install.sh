@@ -130,6 +130,6 @@ lazy_install () {
     strict_install "$PKG" "$3"
 }
 
-for X in "castget" "irssi" "termite" "stack"; do
+for X in "castget" "irssi" "termite" "stack" "elixir"; do
   lazy_install $X
 done
