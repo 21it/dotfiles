@@ -66,7 +66,7 @@ lazy_copy () {
 
 (
   log_installing "vim"
-  sudo apt-get install -y git vim nodejs
+  sudo apt-get install -y git vim nodejs silversearcher-ag
   log_installing "vim_runtime"
   DOTFILES_TARGET=~/.vim_runtime
   if [ -d "$DOTFILES_TARGET" ]; then
@@ -130,6 +130,6 @@ lazy_install () {
     strict_install "$PKG" "$3"
 }
 
-for X in "castget" "irssi" "termite"; do
+for X in "castget" "irssi" "termite" "stack"; do
   lazy_install $X
 done
