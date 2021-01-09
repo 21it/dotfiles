@@ -64,22 +64,6 @@ lazy_copy () {
   lazy_copy i3wm-config ~/.config/i3/config
 )
 
-(
-  log_installing "vim"
-  sudo apt-get install -y git vim nodejs silversearcher-ag
-  log_installing "vim_runtime"
-  DOTFILES_TARGET=~/.vim_runtime
-  if [ -d "$DOTFILES_TARGET" ]; then
-    log_already_exists "$DOTFILES_TARGET"
-  else
-    log_installing "$DOTFILES_TARGET"
-    git clone \
-      https://github.com/tim2CF/ultimate-haskell-ide.git \
-      "$DOTFILES_TARGET"
-    sh "$DOTFILES_TARGET/install_awesome_vimrc.sh"
-  fi
-)
-
 if ! command -v nix &> /dev/null
 then
   (
@@ -114,7 +98,7 @@ fi
 strict_install () {
   log_installing "$1"
   if [ -z "$2" ]; then
-    nix-env -iP "$1"
+    nix-env -iAP "nixpkgs.$1"
   else
     eval "$2"
   fi
@@ -133,3 +117,20 @@ lazy_install () {
 for X in "castget" "irssi" "termite" "stack" "elixir"; do
   lazy_install $X
 done
+
+(
+  log_installing "vim"
+  sudo apt-get install -y git vim nodejs silversearcher-ag
+  lazy_install "grip" "python38Packages.grip"
+  log_installing "vim_runtime"
+  DOTFILES_TARGET=~/.vim_runtime
+  if [ -d "$DOTFILES_TARGET" ]; then
+    log_already_exists "$DOTFILES_TARGET"
+  else
+    log_installing "$DOTFILES_TARGET"
+    git clone \
+      https://github.com/tim2CF/ultimate-haskell-ide.git \
+      "$DOTFILES_TARGET"
+    sh "$DOTFILES_TARGET/install_awesome_vimrc.sh"
+  fi
+)
