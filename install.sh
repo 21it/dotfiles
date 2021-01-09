@@ -2,7 +2,7 @@
 
 set -e
 
-DOTFILES_SOURCE_DIR="$(dirname "$(readlink -f "$0")")"
+DOTFILES_SOURCE_DIR="$(dirname "$(readlink -m "$0")")"
 
 log () {
   echo "$1 ==> $2"
@@ -43,7 +43,7 @@ sudo yum update -y
 lazy_copy () {
   local DOTFILES_SOURCE="$DOTFILES_SOURCE_DIR/$1"
   local DOTFILES_TARGET="$2"
-  local DOTFILES_TARGET_DIR="$(dirname "$(readlink -f "$2")")"
+  local DOTFILES_TARGET_DIR="$(dirname "$(readlink -m "$2")")"
   if [ -d "$DOTFILES_TARGET_DIR" ]; then
     log_already_exists "$DOTFILES_TARGET_DIR"
   else
@@ -57,12 +57,6 @@ lazy_copy () {
     cp "$DOTFILES_SOURCE" "$DOTFILES_TARGET"
   fi
 }
-
-#(
-#  log_installing "i3wm"
-#  sudo apt-get install -y i3 unclutter-xfixes
-#  lazy_copy i3wm-config ~/.config/i3/config
-#)
 
 if ! command -v nix &> /dev/null
 then
@@ -133,6 +127,14 @@ lazy_install () {
       "$DOTFILES_TARGET"
     sh "$DOTFILES_TARGET/install_awesome_vimrc.sh"
   fi
+)
+
+(
+  log_installing "i3wm"
+  #sudo apt-get install -y i3 unclutter-xfixes
+  lazy_install i3
+  lazy_install unclutter-xfixes
+  lazy_copy i3wm-config ~/.config/i3/config
 )
 
 for X in "castget" "irssi" "termite" "stack" "elixir"; do
