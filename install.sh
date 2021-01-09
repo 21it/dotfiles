@@ -12,6 +12,10 @@ log_error () {
   log "error" "$1"
 }
 
+log_bundle () {
+  log "bundle" "$1"
+}
+
 log_updating () {
   log "updating" "$1"
 }
@@ -32,14 +36,6 @@ log_already_installed () {
   log "already installed" "$1"
 }
 
-if [[ $UID == 0 ]]; then
-  log_error "please don't run this script with sudo!"
-  exit 1
-fi
-
-log_updating "yum"
-sudo yum update -y
-
 lazy_copy () {
   local DOTFILES_SOURCE="$DOTFILES_SOURCE_DIR/$1"
   local DOTFILES_TARGET="$2"
@@ -58,6 +54,34 @@ lazy_copy () {
   fi
 }
 
+lazy_install () {
+  # 1st arg = executable name (required)
+  # 2nd arg = pkg name (optional)
+  # 3rd arg = installation command (optional)
+  local PKG="$([ -z "$2" ] && echo "$1" || echo "$2")"
+  command -v "$1" > /dev/null && \
+    log_already_installed "$PKG" || \
+    strict_install "$PKG" "$3"
+}
+
+strict_install () {
+  log_installing "$1"
+  if [ -z "$2" ]; then
+    nix-env -iAP "nixpkgs.$1"
+  else
+    eval "$2"
+  fi
+}
+
+if [[ $UID == 0 ]]; then
+  log_error "please don't run this script with sudo!"
+  exit 1
+fi
+
+log_updating "yum"
+sudo yum update -y
+
+log_bundle "nix"
 if ! command -v nix &> /dev/null
 then
   (
@@ -78,6 +102,7 @@ else
   log_already_installed "nix"
 fi
 
+log_bundle "nixpkgs"
 NIX_CHANNELS="$(nix-channel --list)"
 EXPECTED_NIX_CHANNELS="nixpkgs https://nixos.org/channels/nixos-20.09"
 if [ "$NIX_CHANNELS" != "$EXPECTED_NIX_CHANNELS" ]; then
@@ -89,34 +114,14 @@ else
   log_already_installed "nixpkgs"
 fi
 
-strict_install () {
-  log_installing "$1"
-  if [ -z "$2" ]; then
-    nix-env -iAP "nixpkgs.$1"
-  else
-    eval "$2"
-  fi
-}
-
-lazy_install () {
-  # 1st arg = executable name (required)
-  # 2nd arg = pkg name (optional)
-  # 3rd arg = installation command (optional)
-  local PKG="$([ -z "$2" ] && echo "$1" || echo "$2")"
-  command -v "$1" > /dev/null && \
-    log_already_installed "$PKG" || \
-    strict_install "$PKG" "$3"
-}
-
 (
-  log_installing "vim"
+  log_bundle "vim"
   lazy_install "vim"
   lazy_install "git"
   lazy_install "ag" "silver-searcher"
   lazy_install "node" "nodejs"
   lazy_install "grip" "python38Packages.grip"
   lazy_install "xdg-open" "xdg_utils"
-  log_installing "vim_runtime"
   DOTFILES_TARGET=~/.vim_runtime
   if [ -d "$DOTFILES_TARGET" ]; then
     log_already_exists "$DOTFILES_TARGET"
@@ -130,10 +135,9 @@ lazy_install () {
 )
 
 (
-  log_installing "i3wm"
-  #sudo apt-get install -y i3 unclutter-xfixes
-  lazy_install i3
-  lazy_install unclutter-xfixes
+  log_bundle "i3wm"
+  sudo yum install -y i3
+  lazy_install "unclutter" "unclutter-xfixes"
   lazy_copy i3wm-config ~/.config/i3/config
 )
 
