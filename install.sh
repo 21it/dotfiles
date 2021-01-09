@@ -37,8 +37,8 @@ if [[ $UID == 0 ]]; then
   exit 1
 fi
 
-log_updating "apt-get"
-sudo apt-get update -y
+log_updating "yum"
+sudo yum update -y
 
 lazy_copy () {
   local DOTFILES_SOURCE="$DOTFILES_SOURCE_DIR/$1"
@@ -58,18 +58,18 @@ lazy_copy () {
   fi
 }
 
-(
-  log_installing "i3wm"
-  sudo apt-get install -y i3 unclutter-xfixes
-  lazy_copy i3wm-config ~/.config/i3/config
-)
+#(
+#  log_installing "i3wm"
+#  sudo apt-get install -y i3 unclutter-xfixes
+#  lazy_copy i3wm-config ~/.config/i3/config
+#)
 
 if ! command -v nix &> /dev/null
 then
   (
     log_installing "nix"
     cd ~/Downloads
-    sudo apt-get install -y gnupg2
+    sudo yum install -y gnupg2 curl tar xz
     curl -o install-nix-2.3.10 \
       https://releases.nixos.org/nix/nix-2.3.10/install
     curl -o install-nix-2.3.10.asc \
@@ -114,13 +114,12 @@ lazy_install () {
     strict_install "$PKG" "$3"
 }
 
-for X in "castget" "irssi" "termite" "stack" "elixir"; do
-  lazy_install $X
-done
-
 (
   log_installing "vim"
-  sudo apt-get install -y git vim nodejs silversearcher-ag
+  lazy_install "vim"
+  lazy_install "git"
+  lazy_install "ag" "silver-searcher"
+  lazy_install "node" "nodejs"
   lazy_install "grip" "python38Packages.grip"
   log_installing "vim_runtime"
   DOTFILES_TARGET=~/.vim_runtime
@@ -134,3 +133,7 @@ done
     sh "$DOTFILES_TARGET/install_awesome_vimrc.sh"
   fi
 )
+
+for X in "castget" "irssi" "termite" "stack" "elixir"; do
+  lazy_install $X
+done
