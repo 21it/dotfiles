@@ -141,6 +141,12 @@ fi
   lazy_copy i3wm-config ~/.config/i3/config
 )
 
-for X in "castget" "irssi" "termite" "stack" "elixir"; do
+(
+  log_bundle "termite"
+  lazy_copy termite-config ~/.config/termite/config
+  lazy_install "termite" "termite" "nix-env -iAP nixpkgs.termite && tic -x $DOTFILES_SOURCE_DIR/termite.terminfo"
+)
+
+for X in "castget" "irssi" "stack" "elixir"; do
   lazy_install $X
 done
