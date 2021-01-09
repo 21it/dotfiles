@@ -121,6 +121,7 @@ lazy_install () {
   lazy_install "ag" "silver-searcher"
   lazy_install "node" "nodejs"
   lazy_install "grip" "python38Packages.grip"
+  lazy_install "xdg-open" "xdg_utils"
   log_installing "vim_runtime"
   DOTFILES_TARGET=~/.vim_runtime
   if [ -d "$DOTFILES_TARGET" ]; then
@@ -128,7 +129,7 @@ lazy_install () {
   else
     log_installing "$DOTFILES_TARGET"
     git clone \
-      https://github.com/tim2CF/ultimate-haskell-ide.git \
+      git@github.com:tim2CF/ultimate-haskell-ide.git \
       "$DOTFILES_TARGET"
     sh "$DOTFILES_TARGET/install_awesome_vimrc.sh"
   fi
