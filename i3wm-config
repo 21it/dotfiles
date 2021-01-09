@@ -185,9 +185,9 @@ bar {
 bindsym Ctrl+Mod1+q exec "i3lock --color=000000"
 bindsym Ctrl+Mod1+x exec "i3-msg exit"
 
-exec --no-startup-id "setxkbmap -option 'grp:alt_space_toggle' -layout us,ru"
-exec --no-startup-id "setxkbmap -option 'caps:ctrl_modifier'"
-exec --no-startup-id "pacmd set-default-sink 'alsa_output.pci-0000_00_1f.3.hdmi-stereo'"
-exec --no-startup-id "xrandr --output eDP-1 --mode 1440x900 --scale 1x1"
+exec_always --no-startup-id "sleep 1; setxkbmap -option 'grp:alt_space_toggle' -layout us,ru"
+exec_always --no-startup-id "sleep 1; setxkbmap -option 'caps:ctrl_modifier'"
+exec_always --no-startup-id "sleep 1; pacmd set-default-sink 'alsa_output.pci-0000_00_1f.3.hdmi-stereo'"
+exec_always --no-startup-id "sleep 1; xrandr --output eDP-1 --mode 1280x800"
 exec --no-startup-id "unclutter &"
 exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal; exec firefox'
