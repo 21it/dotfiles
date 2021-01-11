@@ -52,6 +52,7 @@ After successfull installation configure environment variables:
 ```shell
 vi ~/.profile
 
+export EMAIL="x@x.com"
 export TERMINAL="termite"
 export HEX_ORGANIZATION="x"
 export HEX_API_KEY="secret"
@@ -59,7 +60,7 @@ export ROBOT_SSH_KEY="$(cat ~/.ssh/id_rsa | base64 --wrap=0)"
 export VIM_BACKGROUND="light" # or "dark"
 export VIM_COLOR_SCHEME="PaperColor" # or "jellybeans"
 export GIT_AUTHOR_NAME="x"
-export GIT_AUTHOR_EMAIL="x@x.com"
+export GIT_AUTHOR_EMAIL="$EMAIL"
 ```
 
 Then reboot your computer and choose `i3` as window manager on login. If something fails - you can play around with installation script as many times as you want - it's lazy and will never do the same job twice.
