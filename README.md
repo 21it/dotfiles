@@ -47,4 +47,50 @@ Just do whatever it says and rerun installation process:
 ~/MYprojects/dotfiles/install.sh
 ```
 
-Then reboot your computer. If something fails - you can play around with installation script as many times as you want - it's lazy and will never do the same job twice.
+After successfull installation configure environment variables:
+
+```shell
+vi ~/.profile
+
+export TERMINAL="termite"
+export HEX_ORGANIZATION="x"
+export HEX_API_KEY="secret"
+export ROBOT_SSH_KEY="$(cat ~/.ssh/id_rsa | base64 --wrap=0)"
+export VIM_BACKGROUND="light" # or "dark"
+export VIM_COLOR_SCHEME="PaperColor" # or "jellybeans"
+export GIT_AUTHOR_NAME="x"
+export GIT_AUTHOR_EMAIL="x@x.com"
+```
+
+Then reboot your computer and choose `i3` as window manager on login. If something fails - you can play around with installation script as many times as you want - it's lazy and will never do the same job twice.
+
+# HiDPI/Retina/5K display
+
+If you are using HiDPI display then you need to configure X server:
+
+```shell
+vi ~/.Xresources
+
+Xft.dpi: 192
+URxvt.font: xft:FiraMono-Regular:size=10
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+```
+
+And then:
+
+```shell
+vi ~/.profile
+
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+```
+
+# Docker
+
+Docker installation is quite complex process which implies creation of new user group and systemd services. We don't want to automate it for now. Just follow the steps from official docker manual.

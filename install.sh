@@ -12,6 +12,10 @@ log_error () {
   log "error" "$1"
 }
 
+log_success () {
+  log "success" "$1"
+}
+
 log_bundle () {
   log "bundle" "$1"
 }
@@ -87,7 +91,7 @@ then
   (
     log_installing "nix"
     cd ~/Downloads
-    sudo apt-get install -y gnupg2 curl tar xz
+    sudo apt-get install -y gnupg2 curl tar
     curl -o install-nix-2.3.10 \
       https://releases.nixos.org/nix/nix-2.3.10/install
     curl -o install-nix-2.3.10.asc \
@@ -154,3 +158,5 @@ fi
 for X in "castget" "irssi" "stack" "elixir"; do
   lazy_install $X
 done
+
+log_success "installation finished"
