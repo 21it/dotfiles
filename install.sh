@@ -78,8 +78,8 @@ if [[ $UID == 0 ]]; then
   exit 1
 fi
 
-log_updating "yum"
-sudo yum update -y
+log_updating "apt-get"
+sudo apt-get update -y
 
 log_bundle "nix"
 if ! command -v nix &> /dev/null
@@ -87,7 +87,7 @@ then
   (
     log_installing "nix"
     cd ~/Downloads
-    sudo yum install -y gnupg2 curl tar xz
+    sudo apt-get install -y gnupg2 curl tar xz
     curl -o install-nix-2.3.10 \
       https://releases.nixos.org/nix/nix-2.3.10/install
     curl -o install-nix-2.3.10.asc \
@@ -136,7 +136,7 @@ fi
 
 (
   log_bundle "i3wm"
-  sudo yum install -y i3
+  sudo apt-get install -y i3
   lazy_install "light"
   lazy_install "playerctl"
   lazy_install "xbacklight" "xorg.xbacklight"

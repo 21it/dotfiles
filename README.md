@@ -6,7 +6,7 @@ sudo fdisk -l
 # unmount usb drive
 sudo umount /dev/sdb
 # use Linux ISO image to create bootable usb drive
-sudo dd bs=4M if=Fedora-Workstation-Live-x86_64-33-1.2.iso of=/dev/sdb conv=fsync
+sudo dd bs=4M if=image.iso of=/dev/sdb conv=fsync
 # sync just in case
 sudo sync
 ```
@@ -23,8 +23,8 @@ cat ~/.ssh/id_rsa.pub
 Then add new RSA key to your github account and clone this repo and install dotfiles:
 
 ```shell
-sudo yum update -y
-sudo yum imstall git -y
+sudo apt-get update -y
+sudo apt-get install -y git
 mkdir -p ~/MYprojects
 git clone git@github.com:tim2CF/dotfiles.git ~/MYprojects/dotfiles
 ~/MYprojects/dotfiles/install.sh
