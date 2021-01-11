@@ -208,4 +208,6 @@ exec_always --no-startup-id "sleep 1; setxkbmap -option 'caps:ctrl_modifier'"
 exec_always --no-startup-id "sleep 1; pacmd set-default-sink 'alsa_output.pci-0000_00_1f.3.hdmi-stereo'"
 exec_always --no-startup-id "sleep 1; xrandr --output eDP-1 --mode 1280x800"
 exec --no-startup-id "unclutter &"
-exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal --class fullscreen'
+exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1'
+for_window [class="fullscreen"] fullscreen enable
