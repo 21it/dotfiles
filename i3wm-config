@@ -204,10 +204,10 @@ bindsym Ctrl+Mod1+q exec "i3lock --color=000000"
 bindsym Ctrl+Mod1+x exec "i3-msg exit"
 
 # rc commands
-exec_always --no-startup-id "sleep 1; setxkbmap -option 'grp:alt_space_toggle' -layout us,ru"
-exec_always --no-startup-id "sleep 1; setxkbmap -option 'caps:ctrl_modifier'"
-exec_always --no-startup-id "sleep 1; pacmd set-default-sink 'alsa_output.pci-0000_00_1f.3.hdmi-stereo'"
-exec_always --no-startup-id "sleep 1; xrandr --output eDP-1 --mode 1280x800"
+exec_always --no-startup-id "sleep 3; setxkbmap -option 'grp:alt_space_toggle' -layout us,ru"
+exec_always --no-startup-id "sleep 3; setxkbmap -option 'caps:ctrl_modifier'"
+exec_always --no-startup-id "sleep 3; pacmd set-default-sink 'alsa_output.pci-0000_00_1f.3.hdmi-stereo'"
+exec_always --no-startup-id "if [ \"$(xrandr | grep ' connected ' | wc -l)\" -eq 1 ]; then xrandr --output eDP-1 --mode 1280x800; else xrandr --output eDP-1 --off; fi"
 exec --no-startup-id "unclutter &"
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal --class fullscreen'
 exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1'

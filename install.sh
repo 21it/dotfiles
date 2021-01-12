@@ -155,7 +155,7 @@ fi
   lazy_install "termite" "termite" "nix-env -iAP nixpkgs.termite && tic -x $DOTFILES_SOURCE_DIR/termite.terminfo"
 )
 
-for X in "castget" "irssi" "stack" "elixir"; do
+for X in "castget" "irssi" "stack" "elixir" "docker-compose"; do
   lazy_install $X
 done
 
