@@ -18,6 +18,7 @@ order += "battery all"
 order += "memory"
 order += "load"
 order += "disk /"
+order += "volume master"
 order += "wireless _first_"
 order += "tztime local"
 
@@ -41,6 +42,14 @@ disk "/" {
 
 load {
         format = "CPU: %1min"
+}
+
+volume master {
+        format = "SOUND: %volume"
+        format_muted = "SOUND: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
 
 memory {
