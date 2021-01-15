@@ -7,7 +7,6 @@ DOTFILES_SOURCE_DIR="$(dirname "$(readlink -m "$0")")"
 log () {
   echo "$1 ==> $2"
 }
-
 log_error () {
   log "error" "$1"
 }
@@ -155,18 +154,36 @@ fi
   lazy_install "termite" "termite" "nix-env -iAP nixpkgs.termite && tic -x $DOTFILES_SOURCE_DIR/termite.terminfo"
 )
 
-for X in "castget" "irssi" "stack" "elixir" "docker-compose"; do
-  lazy_install $X
-done
+#
+# utility for Android file transfer:
+#
+#   fusermount -u ~/transfer
+#   jmtpfs ~/transfer
+#   ls -la ~/transfer
+#
+(
+  log_bundle "jmtpfs"
+  mkdir -p ~/transfer
+  lazy_install "jmtpfs"
+)
 
 #
-# jmtpfs utility for Android file transfer
+# utility for RSS podcast downloads:
 #
-# mkdir -p ~/transfer
-# fusermount -u ~/transfer
-# jmtpfs ~/transfer
-# ls -la ~/transfer
+#   castget -v -p
 #
-lazy_install "jmtpfs"
+(
+  log_bundle "castget"
+  lazy_install "sed"
+  lazy_copy castget-config ~/.castgetrc
+  sed -i "s|\$HOME|$HOME|g" ~/.castgetrc
+  mkdir -p ~/podcast/4keelekodi
+  mkdir -p ~/podcast/lightning-junkies
+  lazy_install "castget"
+)
+
+for X in "irssi" "stack" "elixir" "docker-compose"; do
+  lazy_install $X
+done
 
 log_success "installation finished"
