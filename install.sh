@@ -159,4 +159,14 @@ for X in "castget" "irssi" "stack" "elixir" "docker-compose"; do
   lazy_install $X
 done
 
+#
+# jmtpfs utility for Android file transfer
+#
+# mkdir -p ~/transfer
+# fusermount -u ~/transfer
+# jmtpfs ~/transfer
+# ls -la ~/transfer
+#
+lazy_install "jmtpfs"
+
 log_success "installation finished"
