@@ -159,7 +159,9 @@ fi
 #
 #   fusermount -u ~/transfer
 #   jmtpfs ~/transfer
-#   ls -la ~/transfer
+#   rsync -azP --ignore-existing \
+#     ~/podcast/ \
+#     ~/transfer/SD\ Card\ Storage/downloads/podcast
 #
 (
   log_bundle "jmtpfs"
