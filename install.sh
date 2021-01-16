@@ -179,6 +179,7 @@ fi
   sed -i "s|\$HOME|$HOME|g" ~/.castgetrc
   mkdir -p ~/podcast/4keelekodi
   mkdir -p ~/podcast/lightning-junkies
+  mkdir -p ~/podcast/stephan-livera
   lazy_install "castget"
 )
 

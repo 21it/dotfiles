@@ -14,6 +14,14 @@ playlist=lightning-junkies
 id3leadartist=lightning-junkies
 id3album=lightning-junkies
 
+[stephan-livera]
+url=https://anchor.fm/s/7d083a4/podcast/rss
+spool=$HOME/podcast/stephan-livera
+filename=%(title) %(date).mp3
+playlist=stephan-livera
+id3leadartist=stephan-livera
+id3album=stephan-livera
+
 [*]
 filename=%(channel_title) - %(title) %(date).mp3
 id3contenttype=podcast
