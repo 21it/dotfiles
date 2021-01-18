@@ -210,5 +210,6 @@ exec_always --no-startup-id "sleep 3; pacmd set-default-sink 'alsa_output.pci-00
 exec_always --no-startup-id "if [ \"$(xrandr | grep ' connected ' | wc -l)\" -eq 1 ]; then xrandr --output eDP-1 --mode 1280x800; else xrandr --output eDP-1 --off; fi"
 exec --no-startup-id "unclutter &"
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal --class fullscreen'
-exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1'
+exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal --class fullscreen'
+exec --no-startup-id i3-msg 'workspace 3; exec firefox; workspace 1'
 for_window [class="fullscreen"] fullscreen enable
