@@ -22,6 +22,22 @@ playlist=stephan-livera
 id3leadartist=stephan-livera
 id3album=stephan-livera
 
+[haskell-weekly]
+url=https://haskellweekly.news/podcast/feed.rss
+spool=$HOME/podcast/haskell-weekly
+filename=%(date) %(title).mp3
+playlist=haskell-weekly
+id3leadartist=haskell-weekly
+id3album=haskell-weekly
+
+[the-haskell-cast]
+url=http://www.haskellcast.com/feed.xml
+spool=$HOME/podcast/the-haskell-cast
+filename=%(title) %(date).mp3
+playlist=the-haskell-cast
+id3leadartist=the-haskell-cast
+id3album=the-haskell-cast
+
 [*]
 filename=%(channel_title) - %(title) %(date).mp3
 id3contenttype=podcast

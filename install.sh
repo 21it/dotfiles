@@ -182,6 +182,8 @@ fi
   mkdir -p ~/podcast/4keelekodi
   mkdir -p ~/podcast/lightning-junkies
   mkdir -p ~/podcast/stephan-livera
+  mkdir -p ~/podcast/haskell-weekly
+  mkdir -p ~/podcast/the-haskell-cast
   lazy_install "castget"
 )
 
