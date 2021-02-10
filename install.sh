@@ -187,8 +187,38 @@ fi
   lazy_install "castget"
 )
 
+#
+# ssh
+#
+#   Disable password login! Edit ssh configuration by setting
+#   “ChallengeResponseAuthentication” and “PasswordAuthentication”
+#   to “no” (uncomment the line by removing # if necessary).
+#   Save and exit.
+#
+#   $ sudo vi /etc/ssh/sshd_config
+#
+#   Restart the SSH daemon, then exit and log in again.
+#
+#   $ sudo systemctl restart sshd
+#
+(
+  TERM=xterm-color
+  log_bundle "ssh"
+  sudo apt-get install -y openssh-server ufw fail2ban
+  sudo systemctl status ssh
+  sudo ufw default deny incoming
+  sudo ufw default allow outgoing
+  sudo ufw allow 22 comment 'allow SSH'
+  sudo ufw enable
+  sudo systemctl enable ufw
+  sudo systemctl status ufw
+  sudo ufw status
+)
+
 for X in "irssi" "stack" "elixir" "docker-compose" "htop" "gcal"; do
   lazy_install $X
 done
+
+sudo apt-get autoremove -y
 
 log_success "installation finished"
