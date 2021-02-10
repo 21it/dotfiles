@@ -187,7 +187,7 @@ fi
   lazy_install "castget"
 )
 
-for X in "irssi" "stack" "elixir" "docker-compose" "htop"; do
+for X in "irssi" "stack" "elixir" "docker-compose" "htop" "gcal"; do
   lazy_install $X
 done
 
