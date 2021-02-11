@@ -201,9 +201,14 @@ fi
 #
 #   $ sudo systemctl restart sshd
 #
+#   Add the following lines to ~/.ssh/config
+#
+#   Host *.onion
+#       proxyCommand ncat --proxy 127.0.0.1:9050 --proxy-type socks5 %h %p
 (
   TERM=xterm-color
   log_bundle "ssh"
+  lazy_install "ncat"
   sudo apt-get install -y openssh-server ufw fail2ban
   sudo systemctl enable ssh
   sudo ufw default deny incoming
@@ -244,7 +249,7 @@ fi
 #   provided by the cat command from above.
 #   So to make the connection, you'd issue the command:
 #
-#   $ sudo torify ssh USER@HOSTNAME
+#   $ ssh USER@HOSTNAME
 #
 #   Where USER is a remote user and HOSTNAME
 #   is the hostname provided by Tor.
