@@ -2,6 +2,7 @@
 
 set -e
 
+TERM=xterm-color
 DOTFILES_SOURCE_DIR="$(dirname "$(readlink -m "$0")")"
 
 log () {
@@ -187,36 +188,35 @@ fi
   lazy_install "castget"
 )
 
-#
-# ssh
-#
-#   Disable password login! Edit ssh configuration by setting
-#   “ChallengeResponseAuthentication” and “PasswordAuthentication”
-#   to “no” (uncomment the line by removing # if necessary).
-#   Save and exit.
-#
-#   $ sudo vi /etc/ssh/sshd_config
-#
-#   Restart the SSH daemon, then exit and log in again.
-#
-#   $ sudo systemctl restart sshd
-#
-#   Add the following lines to ~/.ssh/config
-#
-#   Host *.onion
-#       proxyCommand ncat --proxy 127.0.0.1:9050 --proxy-type socks5 %h %p
 (
-  TERM=xterm-color
-  log_bundle "ssh"
-  lazy_install "ncat"
-  sudo apt-get install -y openssh-server ufw fail2ban
-  sudo systemctl enable ssh
+  log_bundle "ufw"
+  sudo apt-get install -y ufw
   sudo ufw default deny incoming
   sudo ufw default allow outgoing
   sudo ufw allow 22 comment 'allow SSH'
   sudo ufw enable
   sudo systemctl enable ufw
   sudo ufw status
+)
+
+(
+  log_bundle "ssh"
+  lazy_install "ncat"
+  sudo apt-get install -y augeas-tools
+  sudo apt-get install -y openssh-server fail2ban
+  sudo systemctl enable ssh
+  sudo augtool --autosave \
+   'set /files/etc/ssh/sshd_config/PasswordAuthentication no'
+  sudo augtool --autosave \
+   'set /files/etc/ssh/sshd_config/ChallengeResponseAuthentication no'
+  mkdir -p ~/.ssh/
+  touch ~/.ssh/config
+  augtool print /files/$HOME/.ssh/config
+  augtool --autosave \
+    "set /files/$HOME/.ssh/config/Host[.='*.onion'] '*.onion'"
+  augtool --autosave \
+    "set /files/$HOME/.ssh/config/Host[.='*.onion']/proxyCommand 'ncat --proxy 127.0.0.1:9050 --proxy-type socks5 %h %p'"
+  sudo systemctl restart sshd
 )
 
 #
@@ -255,7 +255,6 @@ fi
 #   is the hostname provided by Tor.
 #
 (
-  TERM=xterm-color
   TOR_SSH_HOST=/var/lib/tor/ssh/hostname
   log_bundle "tor"
   sudo apt-get install tor -y
