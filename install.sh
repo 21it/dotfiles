@@ -90,6 +90,7 @@ if ! command -v nix &> /dev/null
 then
   (
     log_installing "nix"
+    mkdir -p ~/Downloads
     cd ~/Downloads
     sudo apt-get install -y gnupg2 curl tar
     curl -o install-nix-2.3.10 \
