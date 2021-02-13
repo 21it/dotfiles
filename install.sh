@@ -191,9 +191,10 @@ fi
 (
   log_bundle "ufw"
   sudo apt-get install -y ufw
+  #sudo ufw --force reset
   sudo ufw default deny incoming
   sudo ufw default allow outgoing
-  sudo ufw allow 22 comment 'allow SSH'
+  #sudo ufw allow 22 comment 'allow ssh'
   sudo ufw enable
   sudo systemctl enable ufw
   sudo ufw status
@@ -202,8 +203,7 @@ fi
 (
   log_bundle "ssh"
   lazy_install "ncat"
-  sudo apt-get install -y augeas-tools
-  sudo apt-get install -y openssh-server fail2ban
+  sudo apt-get install -y augeas-tools openssh-server fail2ban
   sudo systemctl enable ssh
   sudo augtool --autosave \
    'set /files/etc/ssh/sshd_config/PasswordAuthentication no'
@@ -211,11 +211,11 @@ fi
    'set /files/etc/ssh/sshd_config/ChallengeResponseAuthentication no'
   mkdir -p ~/.ssh/
   touch ~/.ssh/config
-  augtool print /files/$HOME/.ssh/config
+  augtool print /files$HOME/.ssh/config
   augtool --autosave \
-    "set /files/$HOME/.ssh/config/Host[.='*.onion'] '*.onion'"
+    "set /files$HOME/.ssh/config/Host[.='*.onion'] '*.onion'"
   augtool --autosave \
-    "set /files/$HOME/.ssh/config/Host[.='*.onion']/proxyCommand 'ncat --proxy 127.0.0.1:9050 --proxy-type socks5 %h %p'"
+    "set /files$HOME/.ssh/config/Host[.='*.onion']/proxyCommand 'ncat --proxy 127.0.0.1:9050 --proxy-type socks5 %h %p'"
   sudo systemctl restart sshd
 )
 
@@ -263,7 +263,7 @@ fi
     log_success "tor ssh hostname is $(sudo cat "$TOR_SSH_HOST")"
   else
     log_error "FILE $TOR_SSH_HOST DOES NOT EXIST"
-    log_error "PLEASE CONFIGURE /etc/tor/torrc ACCORDING install.sh"
+    log_error "PLEASE FIX install.sh OR /etc/tor/torrc"
   fi
 )
 
