@@ -202,21 +202,48 @@ fi
 
 (
   log_bundle "ssh"
+  #
+  # deps
+  #
   lazy_install "ncat"
   sudo apt-get install -y augeas-tools openssh-server fail2ban
+  #
+  # lazy rsa keypair
+  #
+  DEFAULT_SSH_KEY=~/.ssh/id_rsa
+  mkdir -p ~/.ssh/
+  if [ -f "$DEFAULT_SSH_KEY" ]; then
+    log_already_exists "$DEFAULT_SSH_KEY"
+  else
+    log_creating "$DEFAULT_SSH_KEY"
+    ssh-keygen -t rsa -b 4096 -N '' -f $DEFAULT_SSH_KEY
+  fi
+  #
+  # ssh server config
+  #
   sudo systemctl enable ssh
   sudo augtool --autosave \
    'set /files/etc/ssh/sshd_config/PasswordAuthentication no'
   sudo augtool --autosave \
    'set /files/etc/ssh/sshd_config/ChallengeResponseAuthentication no'
-  mkdir -p ~/.ssh/
+  #
+  # ssh client config
+  #
   touch ~/.ssh/config
   augtool print /files$HOME/.ssh/config
+  augtool --autosave \
+    "set /files$HOME/.ssh/config/Host[.='github.com'] 'github.com'"
+  augtool --autosave \
+    "set /files$HOME/.ssh/config/Host[.='github.com']/HostName 'github.com'"
+  augtool --autosave \
+    "set /files$HOME/.ssh/config/Host[.='github.com']/IdentityFile '$DEFAULT_SSH_KEY'"
+  augtool --autosave \
+    "set /files$HOME/.ssh/config/Host[.='github.com']/IdentitiesOnly 'yes'"
   augtool --autosave \
     "set /files$HOME/.ssh/config/Host[.='*.onion'] '*.onion'"
   augtool --autosave \
     "set /files$HOME/.ssh/config/Host[.='*.onion']/proxyCommand 'ncat --proxy 127.0.0.1:9050 --proxy-type socks5 %h %p'"
-  sudo systemctl restart sshd
+  sudo systemctl restart ssh
 )
 
 #
@@ -230,7 +257,7 @@ fi
 #   At the bottom of that file, add the following:
 #
 #     HiddenServiceDir /var/lib/tor/ssh/
-#     HiddenServicePort 22
+#     HiddenServicePort 22 127.0.0.1:22
 #
 #   Save and close the file. Restart Tor with the command:
 #
@@ -255,8 +282,8 @@ fi
 #   is the hostname provided by Tor.
 #
 (
-  TOR_SSH_HOST=/var/lib/tor/ssh/hostname
   log_bundle "tor"
+  TOR_SSH_HOST=/var/lib/tor/ssh/hostname
   sudo apt-get install tor -y
   sudo systemctl enable tor
   if sudo bash -c "[ -f "$TOR_SSH_HOST" ]"; then
