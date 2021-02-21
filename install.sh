@@ -44,10 +44,10 @@ sudo apt-get update -y
     log_error "got '$NIX_CHANNELS' instead of '$EXPECTED_NIX_CHANNELS'"
     log_installing "nixpkgs"
     nix-channel --add https://nixos.org/channels/nixos-20.09 nixpkgs
-    nix-channel --update
   else
     log_already_installed "nixpkgs"
   fi
+  nix-channel --update
 )
 
 (
