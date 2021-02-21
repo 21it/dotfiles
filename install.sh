@@ -39,11 +39,12 @@ sudo apt-get update -y
 (
   log_bundle "nixpkgs"
   NIX_CHANNELS="$(nix-channel --list)"
-  EXPECTED_NIX_CHANNELS="nixpkgs https://nixos.org/channels/nixos-20.09"
+  EXPECTED_NIX_CHANNELS=$'nixpkgs https://nixos.org/channels/nixos-20.09\nnixpkgs-unstable https://nixos.org/channels/nixos-unstable'
   if [ "$NIX_CHANNELS" != "$EXPECTED_NIX_CHANNELS" ]; then
     log_error "got '$NIX_CHANNELS' instead of '$EXPECTED_NIX_CHANNELS'"
     log_installing "nixpkgs"
     nix-channel --add https://nixos.org/channels/nixos-20.09 nixpkgs
+    nix-channel --add https://nixos.org/channels/nixos-unstable nixpkgs-unstable
   else
     log_already_installed "nixpkgs"
   fi
@@ -124,9 +125,15 @@ for X in "ufw" "ssh" "tor"; do
   source "$DOTFILES_SOURCE_DIR/bundle-$X.sh"
 done
 
-for X in "irssi" "stack" "elixir" "docker-compose" "htop" "gcal"; do
+for X in "irssi" "elixir" "docker-compose" "htop" "gcal"; do
   lazy_install $X
 done
+
+(
+  log_bundle "stack"
+  lazy_install "stack" "stack" "nix-env -iAP nixpkgs-unstable.stack"
+  lazy_copy stack-config ~/.stack/config.yaml
+)
 
 sudo apt-get autoremove -y
 
