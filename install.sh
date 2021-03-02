@@ -124,6 +124,17 @@ for X in "ufw" "ssh" "tor"; do
   source "$DOTFILES_SOURCE_DIR/bundle-$X.sh"
 done
 
+#
+# TODO : automate this aliasing
+#
+#  alias pbcopy='xclip -selection clipboard'
+#  alias pbpaste='xclip -selection clipboard -o'
+#
+(
+  log_bundle "pbcopy"
+  lazy_install "xclip"
+)
+
 for X in "irssi" "stack" "elixir" "docker-compose" "htop" "gcal"; do
   lazy_install $X
 done
