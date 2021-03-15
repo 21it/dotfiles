@@ -206,6 +206,7 @@ bindsym Ctrl+Mod1+x exec "i3-msg exit"
 # rc commands
 exec_always --no-startup-id "sleep 3; setxkbmap -option 'grp:alt_space_toggle' -layout us,ru"
 exec_always --no-startup-id "sleep 3; setxkbmap -option 'caps:ctrl_modifier'"
+exec_always --no-startup-id "if [ \"$(xrandr | grep ' connected ' | wc -l)\" -eq 1 ]; then xrandr --output eDP-1 --mode 1280x720; else xrandr --output eDP-1 --off; fi"
 exec --no-startup-id "unclutter &"
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal --class fullscreen'
 exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal --class fullscreen'
