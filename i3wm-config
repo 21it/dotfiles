@@ -200,8 +200,8 @@ bindsym XF86KbdBrightnessDown exec light -U 33 -s sysfs/leds/smc::kbd_backlight
 bindsym XF86KbdBrightnessUp exec light -A 33 -s sysfs/leds/smc::kbd_backlight
 
 # screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec "brightnessctl s 10-"
+bindsym XF86MonBrightnessUp exec "brightnessctl s +10"
 
 # custom bindings and rc commands
 bindsym Ctrl+Mod1+q exec "i3lock --color=000000"

@@ -76,7 +76,7 @@ sudo apt-get update -y
   sudo apt-get install -y i3
   lazy_install "light"
   lazy_install "playerctl"
-  lazy_install "xbacklight" "xorg.xbacklight"
+  lazy_install "brightnessctl"
   lazy_install "unclutter" "unclutter-xfixes"
   lazy_copy i3wm-config ~/.config/i3/config
   lazy_copy i3wm-status-config ~/.i3status.conf
