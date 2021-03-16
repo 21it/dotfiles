@@ -147,6 +147,8 @@ done
   lazy_copy stack-config ~/.stack/config.yaml
 )
 
+sudo apt-get install ffmpeg -y
+
 sudo apt-get autoremove -y
 
 log_success "installation finished"
