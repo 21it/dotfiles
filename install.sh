@@ -147,6 +147,8 @@ done
   lazy_copy stack-config ~/.stack/config.yaml
 )
 
+lazy_install "slack" "slack" "NIXPKGS_ALLOW_UNFREE=1 nix-env -iAP nixpkgs.slack"
+
 sudo apt-get install ffmpeg -y
 
 sudo apt-get autoremove -y
