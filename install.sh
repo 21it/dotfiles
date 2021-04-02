@@ -147,6 +147,12 @@ done
   lazy_copy stack-config ~/.stack/config.yaml
 )
 
+(
+  log_bundle "smartcard"
+  sudo apt-get install libccid opensc -y
+  lazy_install "gp" "global-platform-pro"
+)
+
 lazy_install "slack" "slack" "NIXPKGS_ALLOW_UNFREE=1 nix-env -iAP nixpkgs.slack"
 
 sudo apt-get install ffmpeg -y
