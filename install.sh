@@ -157,6 +157,12 @@ lazy_install "slack" "slack" "NIXPKGS_ALLOW_UNFREE=1 nix-env -iAP nixpkgs.slack"
 
 sudo apt-get install ffmpeg -y
 
+(
+  log_bundle "2fa"
+  sudo apt-get install -y oathtool gnupg2
+  lazy_install "zenity" "gnome3.zenity"
+)
+
 sudo apt-get autoremove -y
 
 log_success "installation finished"
