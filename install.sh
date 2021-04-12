@@ -155,11 +155,11 @@ done
 
 lazy_install "slack" "slack" "NIXPKGS_ALLOW_UNFREE=1 nix-env -iAP nixpkgs.slack"
 
-sudo apt-get install ffmpeg -y
+sudo apt-get install ffmpeg redshift -y
 
 (
   log_bundle "2fa"
-  sudo apt-get install -y oathtool gnupg2
+  sudo apt-get install -y oathtool gnupg2 lightdm
   lazy_install "zenity" "gnome3.zenity"
 )
 
