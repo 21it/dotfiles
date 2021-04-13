@@ -54,7 +54,7 @@ scrollback_lines = 10000
 #background = rgba(63, 63, 63, 0.8)
 
 # If unset, will reverse foreground and background
-highlight = #0FDCB6
+highlight = #0087af
 
 # Colors from color0 to color254 can be set
 color0 = #3f3f3f
