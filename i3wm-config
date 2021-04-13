@@ -217,5 +217,6 @@ exec --no-startup-id "unclutter &"
 exec --no-startup-id "redshift -O 3000"
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal --class fullscreen'
 exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal --class fullscreen'
-exec --no-startup-id i3-msg 'workspace 3; exec firefox -new-tab -url https://soundcloud.com/discover/sets/charts-trending:ambient -new-tab -url https://github.com; workspace 1'
+exec --no-startup-id i3-msg 'workspace 3; exec i3-sensible-terminal --class fullscreen'
+exec --no-startup-id i3-msg 'workspace 4; exec firefox -new-tab -url https://soundcloud.com/discover/sets/charts-trending:ambient -new-tab -url https://github.com; workspace 1'
 for_window [class="fullscreen"] fullscreen enable
