@@ -161,6 +161,7 @@ sudo apt-get install ffmpeg redshift -y
   log_bundle "2fa"
   sudo apt-get install -y oathtool gnupg2 lightdm
   lazy_install "zenity" "gnome3.zenity"
+  lazy_install "openssl"
 )
 
 sudo apt-get autoremove -y

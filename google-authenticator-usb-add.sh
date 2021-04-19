@@ -20,7 +20,9 @@ read -p "key-name> " KEY_NAME
 read -s -p "key-secret> " KEY_SECRET
 
 echo "$KEY_SECRET" | \
-  sudo --preserve-env gpg2 -c -o "$KEY_DIR/$KEY_NAME.gpg"
+  sudo openssl enc -aes-256-cbc -a -pbkdf2 -out "$KEY_DIR/$KEY_NAME"
+
+sudo sync
 
 sudo umount "$VOLUME"
 
