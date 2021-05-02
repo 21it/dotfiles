@@ -1,0 +1,53 @@
+mode_211
+enable_trace
+establish_context
+card_connect
+
+# GPShell style APDU commands, but you should be able to adapt it to anything that can send raw APDU's to the card
+# Our TK Key 1DDCD7ADBB1B5CDA5193E981F5E86870
+send_apdu -sc 0 -APDU 00A40400101DDCD7ADBB1B5CDA5193E981F5E86870
+
+# Reset card to factory defaults - THIS WILL WIPE OUT ALL APPLETS INSTALLED
+send_apdu -sc 0 -APDU 00F00000
+
+# Set the Card to use T=1 transmission mode
+send_apdu -sc 0 -APDU C0D6012301DA
+send_apdu -sc 0 -APDU C0D6014601DA
+
+# Set default Information Field Size Interface
+send_apdu -sc 0 -APDU C0D6012201FE
+
+# Make the Card identify as SLEEPMODE/NEGOTIABLE/T=1 on both cold and warm states
+send_apdu -sc 0 -APDU C0D60124010F
+send_apdu -sc 0 -APDU C0D60147010F
+
+# The following sequence of APDU's is to be used if you are using T=0 transmission mode, comment out the APDU's above,
+# starting with the reset to factory defaults and uncomment the lines below to use T=0 transmission
+# Set the Card to use T0
+#send_apdu -sc 0 -APDU c0d601240108
+#send_apdu -sc 0 -APDU c0d601470108
+
+# Set the Card to identify as T0
+#send_apdu -sc 0 -APDU c0d6012604036000ff
+#send_apdu -sc 0 -APDU c0d6014904036000ff
+
+# Set the card's historical ATR bytes to display as J 3 H 0 8 1 , T = 1
+# Cold
+send_apdu -sc 0 -APDU c0d601370b0A4A33483038312C543D31
+# Warm
+send_apdu -sc 0 -APDU c0d6015A0b0A4A33483038312C543D31
+
+# Set the auth key to a the default value 404142434445464748494a4b4c4d4e4f
+send_apdu -sc 0 -APDU c0d6030510404142434445464748494a4b4c4d4e4f
+send_apdu -sc 0 -APDU c0d6032110404142434445464748494a4b4c4d4e4f
+send_apdu -sc 0 -APDU c0d6033D10404142434445464748494a4b4c4d4e4f
+
+# !!! WARNING - DO NOT UNCOMMENT THE LINES BELOW - IF YOU DO, YOU MAY RISK BRICKING THE CARD FOR FURTHER DEVELOPMENT WORK !!!
+# !!! UNCOMMENT ONLY FOR PRODUCTION CARDS !!!
+# Protect the Card
+# send_apdu -sc 0 -APDU 00100000
+# Fuse it
+# send_apdu -sc 0 -APDU 00000000
+
+card_disconnect
+release_context

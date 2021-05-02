@@ -38,7 +38,7 @@ set -e
 (
   log_bundle "tor"
   TOR_SSH_HOST=/var/lib/tor/ssh/hostname
-  sudo apt-get install tor -y
+  sudo apt-get install tor torbrowser-launcher -y
   sudo systemctl enable tor
   if sudo bash -c "[ -f "$TOR_SSH_HOST" ]"; then
     log_success "tor ssh hostname is $(sudo cat "$TOR_SSH_HOST")"

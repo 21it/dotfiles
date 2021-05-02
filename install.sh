@@ -151,6 +151,7 @@ done
   log_bundle "smartcard"
   sudo apt-get install libccid opensc -y
   lazy_install "gp" "global-platform-pro"
+  NIXPKGS_ALLOW_INSECURE=1 lazy_install "gpshell"
 )
 
 lazy_install "slack" "slack" "NIXPKGS_ALLOW_UNFREE=1 nix-env -iAP nixpkgs.slack"
@@ -158,7 +159,7 @@ lazy_install "slack" "slack" "NIXPKGS_ALLOW_UNFREE=1 nix-env -iAP nixpkgs.slack"
 sudo apt-get install ffmpeg redshift -y
 
 (
-  log_bundle "2fa"
+  log_bundle "usb-2fa"
   sudo apt-get install -y oathtool gnupg2 lightdm
   lazy_install "zenity" "gnome3.zenity"
   lazy_install "openssl"
