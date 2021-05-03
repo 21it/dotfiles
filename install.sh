@@ -137,7 +137,7 @@ done
   lazy_install "xclip"
 )
 
-for X in "irssi" "elixir" "docker-compose" "htop" "gcal"; do
+for X in "irssi" "elixir" "docker-compose" "htop" "gcal" "ledger-live-desktop"; do
   lazy_install $X
 done
 
