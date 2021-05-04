@@ -137,7 +137,7 @@ done
   lazy_install "xclip"
 )
 
-for X in "irssi" "elixir" "docker-compose" "htop" "gcal" "ledger-live-desktop"; do
+for X in "irssi" "elixir" "docker-compose" "htop" "gcal"; do
   lazy_install $X
 done
 
@@ -155,8 +155,8 @@ done
 )
 
 lazy_install "slack" "slack" "NIXPKGS_ALLOW_UNFREE=1 nix-env -iAP nixpkgs.slack"
-
 sudo apt-get install ffmpeg redshift -y
+sudo snap install ledger-live-desktop
 
 (
   log_bundle "usb-2fa"
