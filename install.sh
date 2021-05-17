@@ -155,7 +155,7 @@ done
 )
 
 lazy_install "slack" "slack" "NIXPKGS_ALLOW_UNFREE=1 nix-env -iAP nixpkgs.slack"
-sudo apt-get install ffmpeg redshift -y
+sudo apt-get install ffmpeg redshift net-tools -y
 sudo snap install ledger-live-desktop
 
 (
