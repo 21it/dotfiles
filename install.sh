@@ -133,8 +133,9 @@ done
 #  alias pbpaste='xclip -selection clipboard -o'
 #
 (
-  log_bundle "pbcopy"
+  log_bundle "clipboard"
   lazy_install "xclip"
+  lazy_install "maim"
 )
 
 for X in "irssi" "elixir" "docker-compose" "htop" "gcal"; do
