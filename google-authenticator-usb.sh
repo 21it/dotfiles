@@ -7,10 +7,12 @@ set -e
 # in /etc/udev/rules.d/ directory and paste these lines –
 #
 # ACTION=="add", SUBSYSTEMS=="usb", KERNEL=="sd[a-z][0-9]", ATTRS{idVendor}=="<vendor-id>", ATTRS{idProduct}=="<device-id>", RUN+="/bin/sh <dotfiles-dir>/google-authenticator-usb.sh %k"
-#
 # ACTION=="remove", SUBSYSTEMS=="usb", KERNEL=="sd[a-z][0-9]", ATTRS{idVendor}=="<vendor-id>", ATTRS{idProduct}=="<device-id>", RUN+="/bin/sh <dotfiles-dir>/something-else.sh %k"
 #
-# You can use usb-devices cli tool to find out details about your USB device
+# You can use `usb-devices` cli tool to find out details about your USB device
+# In case where rules were not applied automatically, you can activate them with the command
+#
+# sudo udevadm control --reload-rules && udevadm trigger
 #
 
 export DISPLAY=:0
