@@ -6,8 +6,9 @@ set -e
 # As root, create a new file named 80-usb.rules
 # in /etc/udev/rules.d/ directory and paste these lines –
 #
-# ACTION=="add", SUBSYSTEMS=="usb", ATTR{idVendor}=="<vendor-id>", ATTR{idProduct}=="<device-id>", RUN+="<dotfiles-dir>/google-authenticator-usb.sh"
-# ACTION=="remove", SUBSYSTEMS=="usb", ENV{ID_VENDOR_ID}=="<vendor-id>", ENV{ID_MODEL_ID}=="<device-id>", RUN+="<other-dir>/something-else.sh"
+# ACTION=="add", SUBSYSTEMS=="usb", KERNEL=="sd[a-z][0-9]", ATTRS{idVendor}=="<vendor-id>", ATTRS{idProduct}=="<device-id>", RUN+="/bin/sh <dotfiles-dir>/google-authenticator-usb.sh %k"
+#
+# ACTION=="remove", SUBSYSTEMS=="usb", KERNEL=="sd[a-z][0-9]", ATTRS{idVendor}=="<vendor-id>", ATTRS{idProduct}=="<device-id>", RUN+="/bin/sh <dotfiles-dir>/something-else.sh %k"
 #
 # You can use usb-devices cli tool to find out details about your USB device
 #
