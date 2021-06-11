@@ -8,6 +8,9 @@ set -e
 #
 # ACTION=="add", SUBSYSTEMS=="usb", ATTR{idVendor}=="<vendor-id>", ATTR{idProduct}=="<device-id>", RUN+="<dotfiles-dir>/google-authenticator-usb.sh"
 # ACTION=="remove", SUBSYSTEMS=="usb", ENV{ID_VENDOR_ID}=="<vendor-id>", ENV{ID_MODEL_ID}=="<device-id>", RUN+="<other-dir>/something-else.sh"
+#
+# You can use usb-devices cli tool to find out details about your USB device
+#
 
 export DISPLAY=:0
 export XAUTHORITY=/var/lib/lightdm/.Xauthority
