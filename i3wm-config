@@ -210,7 +210,8 @@ bindsym XF86MonBrightnessUp exec "brightnessctl s +10"
 bindsym Ctrl+Mod1+q exec "i3lock --color=000000"
 
 # print screen
-bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+p exec maim | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+n exec maim --select | xclip -selection clipboard -t image/png
 
 # rc commands
 exec_always --no-startup-id "setxkbmap -option 'grp:alt_space_toggle' -layout us,ru"
