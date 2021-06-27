@@ -1,7 +1,6 @@
 [4keelekodi]
 url=https://services.err.ee/podcast/series/4keelekodi.xml
 spool=$HOME/podcast/4keelekodi
-filename=%(date) %(title).mp3
 playlist=4keelekodi
 id3leadartist=4keelekodi
 id3album=4keelekodi
@@ -9,7 +8,6 @@ id3album=4keelekodi
 [lightning-junkies]
 url=https://anchor.fm/s/ce6ee00/podcast/rss
 spool=$HOME/podcast/lightning-junkies
-filename=%(title) %(date).mp3
 playlist=lightning-junkies
 id3leadartist=lightning-junkies
 id3album=lightning-junkies
@@ -17,7 +15,6 @@ id3album=lightning-junkies
 [stephan-livera]
 url=https://anchor.fm/s/7d083a4/podcast/rss
 spool=$HOME/podcast/stephan-livera
-filename=%(title) %(date).mp3
 playlist=stephan-livera
 id3leadartist=stephan-livera
 id3album=stephan-livera
@@ -25,7 +22,6 @@ id3album=stephan-livera
 [haskell-weekly]
 url=https://haskellweekly.news/podcast/feed.rss
 spool=$HOME/podcast/haskell-weekly
-filename=%(date) %(title).mp3
 playlist=haskell-weekly
 id3leadartist=haskell-weekly
 id3album=haskell-weekly
@@ -33,13 +29,12 @@ id3album=haskell-weekly
 [the-haskell-cast]
 url=http://www.haskellcast.com/feed.xml
 spool=$HOME/podcast/the-haskell-cast
-filename=%(title) %(date).mp3
 playlist=the-haskell-cast
 id3leadartist=the-haskell-cast
 id3album=the-haskell-cast
 
 [*]
-filename=%(channel_title) - %(title) %(date).mp3
+filename=%(date) %(title) - %(channel_title).mp3
 id3contenttype=podcast
 id3contentgroup=
 id3title=
