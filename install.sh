@@ -142,7 +142,7 @@ done
   lazy_install "maim"
 )
 
-for X in "irssi" "elixir" "docker-compose" "htop" "gcal"; do
+for X in "irssi" "elixir" "erlang" "docker-compose" "htop" "gcal"; do
   lazy_install $X
 done
 
