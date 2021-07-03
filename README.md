@@ -96,7 +96,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 Docker installation is quite complex process which implies creation of new user group and systemd services. We don't want to automate it for now. Just follow the steps from official docker manual.
 
-# Firefox
+# Browser
 
 To setup default black background, open `about:profiles`, then open current root profile directory and
 
@@ -111,6 +111,27 @@ add css style to this file
 #browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels,
 browser[type=content-primary],browser[type=content] > html {
     background: #1D1B19 !important
+}
+```
+
+and then create one more file
+
+```shell
+vi ./chrome/userContent.css
+```
+
+with given css styles
+
+```css
+@-moz-document url-prefix(about:blank) {
+    html > body:empty {
+        background-color: rgb(19,19,20) !important;
+    }
+}
+@-moz-document url(about:blank) {
+    html > body:empty {
+        background-color: rgb(19,19,20) !important;
+    }
 }
 ```
 
