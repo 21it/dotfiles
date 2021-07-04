@@ -10,7 +10,9 @@ lazy_install () {
   # 2nd arg = pkg name (optional)
   # 3rd arg = installation command (optional)
   local PKG="$([ -z "$2" ] && echo "$1" || echo "$2")"
-  command -v "$1" > /dev/null && \
+  (command -v "$1" > /dev/null || \
+    nix-env -q | grep "$1" > /dev/null || \
+    nix-env -q | grep "$PKG" > /dev/null ) && \
     log_already_installed "$PKG" || \
     strict_install "$PKG" "$3"
 }
@@ -18,7 +20,7 @@ lazy_install () {
 strict_install () {
   log_installing "$1"
   if [ -z "$2" ]; then
-    nix-env -iAP "nixpkgs.$1"
+    nix-env -iA "nixpkgs.$1"
   else
     eval "$2"
   fi

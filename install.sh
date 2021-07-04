@@ -85,7 +85,7 @@ sudo apt-get update -y
 (
   log_bundle "termite"
   lazy_copy termite-config ~/.config/termite/config
-  lazy_install "termite" "termite" "nix-env -iAP nixpkgs.termite && tic -x $DOTFILES_SOURCE_DIR/termite.terminfo"
+  lazy_install "termite" "termite" "nix-env -iA nixpkgs.termite && tic -x $DOTFILES_SOURCE_DIR/termite.terminfo"
   sudo apt-get install -y language-pack-ru ttf-ancient-fonts
 )
 
@@ -142,13 +142,13 @@ done
   lazy_install "maim"
 )
 
-for X in "irssi" "elixir" "erlang" "docker-compose" "htop" "gcal"; do
+for X in "erlang" "elixir" "docker-compose" "htop" "gcal"; do
   lazy_install $X
 done
 
 (
   log_bundle "stack"
-  lazy_install "stack" "stack" "nix-env -iAP nixpkgs-unstable.stack"
+  lazy_install "stack" "stack" "nix-env -iA nixpkgs-unstable.stack"
   lazy_copy stack-config ~/.stack/config.yaml
 )
 
@@ -159,7 +159,11 @@ done
   NIXPKGS_ALLOW_INSECURE=1 lazy_install "gpshell"
 )
 
-lazy_install "slack" "slack" "NIXPKGS_ALLOW_UNFREE=1 nix-env -iAP nixpkgs.slack"
+(
+  log_bundle "pkgs"
+  NIXPKGS_ALLOW_UNFREE=1 nix-env -i -f ./nix/pkgs.nix
+)
+
 sudo apt-get install ffmpeg redshift net-tools -y
 sudo snap install ledger-live-desktop
 
