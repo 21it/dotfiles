@@ -222,5 +222,7 @@ exec --no-startup-id "redshift -O 3000"
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal --class fullscreen'
 exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal --class fullscreen'
 exec --no-startup-id i3-msg 'workspace 3; exec i3-sensible-terminal --class fullscreen'
-exec --no-startup-id i3-msg 'workspace 4; exec torbrowser-launcher url https://soundcloud.com/discover/sets/charts-trending:ambient; workspace 1'
+exec --no-startup-id i3-msg 'workspace 4; exec torbrowser-launcher url https://soundcloud.com/discover/sets/charts-trending:ambient'
+exec --no-startup-id i3-msg 'workspace 5; exec pidgin'
+exec --no-startup-id i3-msg 'workspace 4;'
 for_window [class="fullscreen"] fullscreen enable
