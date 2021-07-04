@@ -13,4 +13,5 @@ with pkgs;
   irssi = irssi;
   telegram-desktop = tdesktop;
   slack = slack;
+  skypeforlinux = skypeforlinux;
 }
