@@ -10,8 +10,5 @@ with pkgs;
       skype4pidgin
     ];
   };
-  irssi = irssi;
-  telegram-desktop = tdesktop;
-  slack = slack;
-  skypeforlinux = skypeforlinux;
+  inherit irssi tdesktop slack skypeforlinux;
 }
