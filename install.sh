@@ -123,6 +123,7 @@ sudo apt-get update -y
   mkdir -p ~/podcast/stephan-livera
   mkdir -p ~/podcast/haskell-weekly
   mkdir -p ~/podcast/the-haskell-cast
+  mkdir -p ~/podcast/compositional
   lazy_install "castget"
 )
 

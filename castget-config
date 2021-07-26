@@ -33,6 +33,13 @@ playlist=the-haskell-cast
 id3leadartist=the-haskell-cast
 id3album=the-haskell-cast
 
+[compositional]
+url=https://feeds.fireside.fm/compositional/rss
+spool=$HOME/podcast/compositional
+playlist=compositional
+id3leadartist=compositional
+id3album=compositional
+
 [*]
 filename=%(date) %(title) - %(channel_title).mp3
 id3contenttype=podcast
