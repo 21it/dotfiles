@@ -127,7 +127,7 @@ sudo apt-get update -y
   lazy_install "castget"
 )
 
-for X in "ufw" "ssh" "tor"; do
+for X in "ufw" "ssh" "tor" "kaios"; do
   source "$DOTFILES_SOURCE_DIR/bundle-$X.sh"
 done
 
