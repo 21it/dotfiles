@@ -136,3 +136,16 @@ with given css styles
 ```
 
 and then open `about:config` and set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`. Also setting `browser.display.background_color` to `#1D1B19` might help in some cases.
+
+# Raspberry Pi Zero
+
+```shell
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install git libopenjp2-7 libzbar0 libfuse-dev libatlas-base-dev libtiff5 -y
+sudo apt-get install python3-pil python3-numpy python3-pip python3-picamera -y
+pip3 install Cython smbus
+curl -sSL https://pisupp.ly/papiruscode | sudo bash
+# enable spi and i2c
+sudo raspbi-config
+```

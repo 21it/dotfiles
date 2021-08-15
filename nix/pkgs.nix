@@ -11,4 +11,5 @@ with pkgs;
     ];
   };
   inherit irssi tdesktop slack skypeforlinux;
+  inherit yarn;
 }
