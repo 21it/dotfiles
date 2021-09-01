@@ -40,6 +40,13 @@ playlist=compositional
 id3leadartist=compositional
 id3album=compositional
 
+[tales-from-the-crypt]
+url=https://anchor.fm/s/558f520/podcast/rss
+spool=$HOME/podcast/tales-from-the-crypt
+playlist=tales-from-the-crypt
+id3leadartist=tales-from-the-crypt
+id3album=tales-from-the-crypt
+
 [*]
 filename=%(date) %(title) - %(channel_title).mp3
 id3contenttype=podcast

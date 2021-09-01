@@ -124,6 +124,7 @@ sudo apt-get update -y
   mkdir -p ~/podcast/haskell-weekly
   mkdir -p ~/podcast/the-haskell-cast
   mkdir -p ~/podcast/compositional
+  mkdir -p ~/podcast/tales-from-the-crypt
   lazy_install "castget"
 )
 
