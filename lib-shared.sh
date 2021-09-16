@@ -57,3 +57,7 @@ lazy_copy () {
     cp "$DOTFILES_SOURCE" "$DOTFILES_TARGET"
   fi
 }
+
+lazy_append () {
+  grep -q "$1" "$2" || echo "$1" >> "$2"
+}

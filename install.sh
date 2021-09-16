@@ -132,16 +132,12 @@ for X in "ufw" "ssh" "tor" "kaios"; do
   source "$DOTFILES_SOURCE_DIR/bundle-$X.sh"
 done
 
-#
-# TODO : automate this aliasing
-#
-#  alias pbcopy='xclip -selection clipboard'
-#  alias pbpaste='xclip -selection clipboard -o'
-#
 (
   log_bundle "clipboard"
   lazy_install "xclip"
   lazy_install "maim"
+  lazy_append "alias pbcopy='xclip -selection clipboard'" ~/.profile
+  lazy_append "alias pbpaste='xclip -selection clipboard -o'" ~/.profile
 )
 
 for X in "erlang" "elixir" "docker-compose" "htop" "gcal"; do
