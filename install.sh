@@ -136,8 +136,9 @@ done
   log_bundle "clipboard"
   lazy_install "xclip"
   lazy_install "maim"
-  lazy_append "alias pbcopy='xclip -selection clipboard'" ~/.profile
-  lazy_append "alias pbpaste='xclip -selection clipboard -o'" ~/.profile
+  touch ~/.bash_aliases
+  lazy_append "alias pbcopy='xclip -selection clipboard'" ~/.bash_aliases
+  lazy_append "alias pbpaste='xclip -selection clipboard -o'" ~/.bash_aliases
 )
 
 for X in "erlang" "elixir" "docker-compose" "htop" "gcal"; do
