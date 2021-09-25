@@ -1,0 +1,34 @@
+! Trying to F*** with my keyboard.
+!
+! The theory is that if I make the caps lock be the "Mode_switch" key,
+! then I can change what happens for each key when I press the "Mode_switch" key.
+!
+! I'm not using the "Mode_switch" key anyway...
+!
+! This will make the caps lock be the "Mode_switch" key.
+clear Lock
+
+! 66 is the Caps_Lock.
+keycode 66 = Mode_switch Mode_switch
+
+! This is where we remap any key's Mode_switch symbols.
+!
+! This is the xmodmap keymap table. This is the structure:
+! keycode XX = A B C D
+! XX is the keycode (not the keysym, retrieved by xev)
+! A is the keysym output when just the key is pressed
+! B is the keysym output when the key is pressed + Shift
+! C is the keysym output when the key is pressed + Mode_switch (now capslock)
+! D is the keysym output when the key is pressed + Shift + Mode_switch (now capslock)
+
+! Mouse actions on 2nd layer
+keycode  110 = Home Home KP_Multiply KP_Multiply
+keycode  111 = Up Up KP_8 KP_8
+keycode  112 = Prior Prior KP_Subtract KP_Subtract
+keycode  113 = Left Left KP_4 KP_4
+keycode  114 = Right Right KP_6 KP_6
+keycode  115 = End End KP_Insert KP_Insert
+keycode  116 = Down Down KP_2 KP_2
+keycode  117 = Next Next KP_Delete KP_Delete
+keycode  118 = Insert Insert KP_Divide KP_Divide
+keycode  119 = Delete Delete KP_5 KP_5

@@ -3,14 +3,7 @@
 }:
 with pkgs;
 {
-  pidgin-with-plugins = pidgin-with-plugins.override {
-    plugins = [
-      purple-slack
-      telegram-purple
-      skype4pidgin
-    ];
-  };
-  inherit irssi tdesktop slack skypeforlinux;
+  inherit irssi slack skypeforlinux;
   inherit yarn;
-  inherit wine;
+  inherit xkbset;
 }
