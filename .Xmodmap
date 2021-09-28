@@ -1,16 +1,4 @@
-! Trying to F*** with my keyboard.
 !
-! The theory is that if I make the caps lock be the "Mode_switch" key,
-! then I can change what happens for each key when I press the "Mode_switch" key.
-!
-! I'm not using the "Mode_switch" key anyway...
-!
-! This will make the caps lock be the "Mode_switch" key.
-clear Lock
-
-! 66 is the Caps_Lock.
-keycode 66 = Mode_switch Mode_switch
-
 ! This is where we remap any key's Mode_switch symbols.
 !
 ! This is the xmodmap keymap table. This is the structure:
@@ -18,8 +6,16 @@ keycode 66 = Mode_switch Mode_switch
 ! XX is the keycode (not the keysym, retrieved by xev)
 ! A is the keysym output when just the key is pressed
 ! B is the keysym output when the key is pressed + Shift
-! C is the keysym output when the key is pressed + Mode_switch (now capslock)
-! D is the keysym output when the key is pressed + Shift + Mode_switch (now capslock)
+! C is the keysym output when the key is pressed + Mode_switch
+! D is the keysym output when the key is pressed + Shift + Mode_switch
+!
+
+! Remap Caps_Lock into Control_R.
+clear Lock
+keycode 66  = Control_R Control_R Control_R Control_R
+
+! Actual Control_R toggle layers.
+keycode 105 = Mode_switch Mode_switch
 
 ! Mouse actions on 2nd layer
 keycode  110 = Home Home KP_Multiply KP_Multiply
