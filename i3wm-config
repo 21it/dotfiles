@@ -204,6 +204,10 @@ bindsym XF86KbdBrightnessUp exec light -A 33 -s sysfs/leds/smc::kbd_backlight
 bindsym XF86MonBrightnessDown exec "brightnessctl s 10-"
 bindsym XF86MonBrightnessUp exec "brightnessctl s +10"
 
+# mouse scroll
+bindsym Group2+XF86ScrollDown exec "xdotool click 4"
+bindsym Group2+XF86ScrollUp exec "xdotool click 5"
+
 # custom bindings and rc commands
 bindsym Ctrl+Mod1+q exec "i3lock --color=000000"
 
