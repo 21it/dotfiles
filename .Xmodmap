@@ -37,15 +37,15 @@ keycode 51 = backslash bar Cyrillic_io Cyrillic_IO grave asciitilde
 ! Nav and mouse actions on 3rd layer vim keys
 !
 ! Mouse Hold
-keycode 29 = y Y Cyrillic_en Cyrillic_EN Home KP_Insert
-! Page Up + Mouse Left Click
-keycode 30 = u U Cyrillic_ghe Cyrillic_GHE Next u
-! Mouse Right Click
-keycode 31 = i I Cyrillic_sha Cyrillic_SHA Prior i
-! Mouse Release
-keycode 32 = o O Cyrillic_shcha Cyrillic_SHCHA End KP_Delete
-! Page Down
-!keycode 40 = d D Cyrillic_ve Cyrillic_VE Next Next
+keycode 29 = y Y Cyrillic_en Cyrillic_EN y KP_Insert
+! Home + Mouse Left Click
+keycode 30 = u U Cyrillic_ghe Cyrillic_GHE Home u
+! Page Down + Mouse Right Click
+keycode 31 = i I Cyrillic_sha Cyrillic_SHA Next i
+! Page Up + Mouse Release
+keycode 32 = o O Cyrillic_shcha Cyrillic_SHCHA Prior KP_Delete
+! End
+keycode 33 = p P Cyrillic_ze Cyrillic_ZE End End
 ! Move Left
 keycode 43 = h H Cyrillic_er Cyrillic_ER Left KP_4
 ! Move Down
@@ -54,7 +54,9 @@ keycode 44 = j J Cyrillic_o Cyrillic_O Down KP_2
 keycode 45 = k K Cyrillic_el Cyrillic_EL Up KP_8
 ! Move Right
 keycode 46 = l L Cyrillic_de Cyrillic_DE Right KP_6
-! Mouse Scroll Down
-keycode 57 = n N Cyrillic_te Cyrillic_TE Delete n
+! Delete
+keycode 57 = n N Cyrillic_te Cyrillic_TE Delete Delete
+! Insert + Mouse Scroll Down
+keycode 58 = m M Cyrillic_softsign Cyrillic_SOFTSIGN Insert XF86ScrollDown
 ! Mouse Scroll Up
-keycode 58 = m M Cyrillic_softsign Cyrillic_SOFTSIGN Insert m
+keycode 59 = comma less Cyrillic_be Cyrillic_BE comma XF86ScrollUp
