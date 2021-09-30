@@ -18,24 +18,34 @@
 pointer = 1 2 3 5 4 6 7 8 9 10
 
 !
-! Caps_Lock toggle layers
+! Caps_Lock, Alt_R, Control_R toggle layers
 !
 clear Lock
 keycode 66 = ISO_Level3_Shift ISO_Level3_Shift
+!
+! TODO !!!
+!
+!keycode 105 = ISO_Level3_Shift ISO_Level3_Shift
+!keycode 108 = ISO_Level3_Shift ISO_Level3_Shift
+
+!
+! ё/Ё/Grave/Tilde for 60% keyboards
+!
+keycode 51 = backslash bar Cyrillic_io Cyrillic_IO grave asciitilde
 
 !
 ! Nav and mouse actions on 3rd layer vim keys
 !
 ! Mouse Hold
-keycode 29 = y Y Cyrillic_en Cyrillic_EN udiaeresis KP_Insert
+keycode 29 = y Y Cyrillic_en Cyrillic_EN Home KP_Insert
 ! Page Up + Mouse Left Click
-keycode 30 = u U Cyrillic_ghe Cyrillic_GHE Prior u
+keycode 30 = u U Cyrillic_ghe Cyrillic_GHE Next u
 ! Mouse Right Click
-keycode 31 = i I Cyrillic_sha Cyrillic_sha iacute i
+keycode 31 = i I Cyrillic_sha Cyrillic_SHA Prior i
 ! Mouse Release
-keycode 32 = o O Cyrillic_shcha Cyrillic_SHCHA oacute KP_Delete
+keycode 32 = o O Cyrillic_shcha Cyrillic_SHCHA End KP_Delete
 ! Page Down
-keycode 40 = d D Cyrillic_ve Cyrillic_VE Next Next
+!keycode 40 = d D Cyrillic_ve Cyrillic_VE Next Next
 ! Move Left
 keycode 43 = h H Cyrillic_er Cyrillic_ER Left KP_4
 ! Move Down
@@ -45,6 +55,6 @@ keycode 45 = k K Cyrillic_el Cyrillic_EL Up KP_8
 ! Move Right
 keycode 46 = l L Cyrillic_de Cyrillic_DE Right KP_6
 ! Mouse Scroll Down
-keycode 57 = n N Cyrillic_te Cyrillic_TE ntilde n
+keycode 57 = n N Cyrillic_te Cyrillic_TE Delete n
 ! Mouse Scroll Up
-keycode 58 = m M Cyrillic_softsign Cyrillic_SOFTSIGN mu m
+keycode 58 = m M Cyrillic_softsign Cyrillic_SOFTSIGN Insert m
