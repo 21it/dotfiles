@@ -48,16 +48,14 @@ keycode 51 = backslash bar Cyrillic_io Cyrillic_IO grave asciitilde
 !
 ! Nav and mouse actions on vim keys
 !
-! Mouse Hold
-keycode 29 = y Y Cyrillic_en Cyrillic_EN y KP_Insert
-! Home + Mouse Left Click
-keycode 30 = u U Cyrillic_ghe Cyrillic_GHE Home u
-! Page Down + Mouse Right Click
-keycode 31 = i I Cyrillic_sha Cyrillic_SHA Next i
-! Page Up + Mouse Release
-keycode 32 = o O Cyrillic_shcha Cyrillic_SHCHA Prior KP_Delete
-! End
-keycode 33 = p P Cyrillic_ze Cyrillic_ZE End End
+! Home + Mouse Hold
+keycode 29 = y Y Cyrillic_en Cyrillic_EN Home KP_Insert
+! Page Down + Mouse Left Click
+keycode 30 = u U Cyrillic_ghe Cyrillic_GHE Next u
+! Page Up + Mouse Right Click
+keycode 31 = i I Cyrillic_sha Cyrillic_SHA Prior i
+! End + Mouse Release
+keycode 32 = o O Cyrillic_shcha Cyrillic_SHCHA End KP_Delete
 ! Move Left
 keycode 43 = h H Cyrillic_er Cyrillic_ER Left KP_4
 ! Move Down
