@@ -164,6 +164,7 @@ done
   NIXPKGS_ALLOW_UNFREE=1 nix-env -i -f ./nix/pkgs.nix
 )
 
+sudo apt-get install tlp -y
 sudo apt-get install ffmpeg redshift net-tools -y
 sudo snap install ledger-live-desktop
 
