@@ -195,14 +195,21 @@ bar {
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym Mod5+Shift+XF86AudioPlay exec playerctl play-pause
+bindsym Mod5+Shift+XF86AudioNext exec playerctl next
+bindsym Mod5+Shift+XF86AudioPrev exec playerctl previous
 
 # keyboard backlight
 bindsym XF86KbdBrightnessDown exec light -U 33 -s sysfs/leds/smc::kbd_backlight
 bindsym XF86KbdBrightnessUp exec light -A 33 -s sysfs/leds/smc::kbd_backlight
+bindsym Mod5+Shift+XF86KbdBrightnessDown exec light -U 33 -s sysfs/leds/smc::kbd_backlight
+bindsym Mod5+Shift+XF86KbdBrightnessUp exec light -A 33 -s sysfs/leds/smc::kbd_backlight
 
 # screen brightness
 bindsym XF86MonBrightnessDown exec "brightnessctl s 10-"
 bindsym XF86MonBrightnessUp exec "brightnessctl s +10"
+bindsym Mod5+Shift+XF86MonBrightnessDown exec "brightnessctl s 10-"
+bindsym Mod5+Shift+XF86MonBrightnessUp exec "brightnessctl s +10"
 
 # mouse actions
 bindsym Mod5+Shift+u exec "xdotool click --clearmodifiers 1"
