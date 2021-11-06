@@ -46,6 +46,11 @@ keycode 21 = equal plus equal plus F12 XF86AudioRaiseVolume
 keycode 51 = backslash bar Cyrillic_io Cyrillic_IO grave asciitilde
 
 !
+! Escape for non-60% keyboards
+!
+keycode 49 = Escape Escape Escape Escape Escape Escape
+
+!
 ! Nav and mouse actions on vim keys
 !
 ! Home + Mouse Hold
