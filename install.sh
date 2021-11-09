@@ -166,6 +166,7 @@ done
 
 sudo apt-get install tlp -y
 sudo apt-get install ffmpeg redshift net-tools -y
+sudo apt-get install alsa-base pulseaudio -y
 sudo snap install ledger-live-desktop
 
 (
