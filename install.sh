@@ -168,6 +168,8 @@ sudo apt-get install tlp -y
 sudo apt-get install ffmpeg redshift net-tools -y
 sudo apt-get install alsa-base pulseaudio -y
 sudo snap install ledger-live-desktop
+# for docker buildx
+sudo apt-get install -y qemu-user-static binfmt-support
 
 (
   log_bundle "usb-2fa"
