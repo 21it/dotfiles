@@ -150,6 +150,7 @@ done
   log_bundle "stack"
   lazy_install "stack" "stack" "nix-env -iA nixpkgs-unstable.stack"
   lazy_copy stack-config ~/.stack/config.yaml
+  sudo apt-get install build-essential g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev gnupg netbase -y
 )
 
 (

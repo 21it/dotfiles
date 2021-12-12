@@ -6,4 +6,5 @@ with pkgs;
   inherit irssi slack skypeforlinux;
   inherit yarn;
   inherit xkbset xdotool;
+  inherit ormolu;
 }
