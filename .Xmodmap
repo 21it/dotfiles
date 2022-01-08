@@ -51,6 +51,11 @@ keycode 51 = backslash bar Cyrillic_io Cyrillic_IO grave asciitilde
 keycode 49 = Escape Escape Escape Escape Escape Escape
 
 !
+! Right super key
+!
+keycode 135 = Super_R Super_R Super_R Super_R Super_R Super_R
+
+!
 ! Nav and mouse actions on vim keys
 !
 ! Home + Mouse Hold
