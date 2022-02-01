@@ -56,6 +56,14 @@ keycode 49 = Escape Escape Escape Escape Escape Escape
 keycode 135 = Super_R Super_R Super_R Super_R Super_R Super_R
 
 !
+! Right shift for 64-key 60% keyboards
+!
+clear Shift
+add Shift = Shift_L Shift_R Up Delete
+keycode 111 = Shift_R NoSymbol Shift_R NoSymbol Shift_R NoSymbol
+keycode 119 = Shift_R NoSymbol Shift_R NoSymbol Shift_R NoSymbol
+
+!
 ! Nav and mouse actions on vim keys
 !
 ! Home + Mouse Hold
