@@ -82,9 +82,7 @@ keycode 44 = j J Cyrillic_o Cyrillic_O Down KP_2
 keycode 45 = k K Cyrillic_el Cyrillic_EL Up KP_8
 ! Move Right
 keycode 46 = l L Cyrillic_de Cyrillic_DE Right KP_6
-! Delete
-keycode 57 = n N Cyrillic_te Cyrillic_TE Delete Delete
 ! Insert + Mouse Scroll Down
 keycode 58 = m M Cyrillic_softsign Cyrillic_SOFTSIGN Insert XF86ScrollDown
 ! Mouse Scroll Up
-keycode 59 = comma less Cyrillic_be Cyrillic_BE comma XF86ScrollUp
+keycode 59 = comma less Cyrillic_be Cyrillic_BE Delete XF86ScrollUp
