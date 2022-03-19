@@ -47,6 +47,13 @@ playlist=tales-from-the-crypt
 id3leadartist=tales-from-the-crypt
 id3album=tales-from-the-crypt
 
+[spanish-podcast]
+url=http://spanishpodcast.duolingo.libsynpro.com/rss
+spool=$HOME/podcast/spanish-podcast
+playlist=spanish-podcast
+id3leadartist=spanish-podcast
+id3album=spanish-podcast
+
 [*]
 filename=%(date) %(title) - %(channel_title).mp3
 id3contenttype=podcast
