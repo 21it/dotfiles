@@ -53,7 +53,10 @@ keycode 49 = Escape Escape Escape Escape Escape Escape
 !
 ! Right super key
 !
+clear Control
+keycode 105 = Super_R Super_R Super_R Super_R Super_R Super_R
 keycode 135 = Super_R Super_R Super_R Super_R Super_R Super_R
+add Control = Control_L
 
 !
 ! Right shift for 64-key 60% keyboards
