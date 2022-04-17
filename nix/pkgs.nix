@@ -10,6 +10,6 @@ with pkgs;
   inherit patchelf;
   inherit expect;
   inherit feh imlib2 imagemagick;
-  inherit htmldoc;
+  inherit htmldoc pandoc;
   #tok = import (fetchTarball "https://github.com/21it/tok/tarball/848b16af983ba9687501a3864eef869ef70e9615");
 }

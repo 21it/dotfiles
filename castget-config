@@ -54,6 +54,20 @@ playlist=spanish-podcast
 id3leadartist=spanish-podcast
 id3album=spanish-podcast
 
+[plebs-cast]
+url=https://anchor.fm/s/5f1c9580/podcast/rss
+spool=$HOME/podcast/plebs-cast
+playlist=plebs-cast
+id3leadartist=plebs-cast
+id3album=plebs-cast
+
+[lntcn]
+url=https://anchor.fm/s/6c867ec/podcast/rss
+spool=$HOME/podcast/lntcn
+playlist=lntcn
+id3leadartist=lntcn
+id3album=lntcn
+
 [*]
 filename=%(date) %(title) - %(channel_title).mp3
 id3contenttype=podcast
