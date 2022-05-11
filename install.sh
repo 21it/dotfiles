@@ -96,12 +96,12 @@ sudo apt-get update -y
 #   fusermount -u ~/transfer
 #   jmtpfs ~/transfer
 #   sudo rsync -azP --ignore-existing \
-#     ~/podcast/ \
+#     ~/podcast/* \
 #     ~/transfer/SD\ Card\ Storage/downloads/podcast
 #
 # or for SD-card
 #
-# sudo rsync -azP --ignore-existing ~/podcast/ ~/transfer/
+# sudo rsync -azP --ignore-existing ~/podcast/* ~/transfer/
 #
 (
   log_bundle "jmtpfs"
