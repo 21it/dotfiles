@@ -12,5 +12,6 @@ with pkgs;
   inherit feh imlib2 imagemagick;
   inherit htmldoc pandoc;
   inherit element-desktop;
+  inherit qmk;
   #tok = import (fetchTarball "https://github.com/21it/tok/tarball/848b16af983ba9687501a3864eef869ef70e9615");
 }
