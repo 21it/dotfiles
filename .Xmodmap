@@ -59,12 +59,11 @@ keycode 135 = Super_R Super_R Super_R Super_R Super_R Super_R
 add Control = Control_L
 
 !
-! Right shift for 64-key 60% keyboards
+! Right shift into enter
 !
-! clear Shift
-! add Shift = Shift_L Shift_R Up Delete
-! keycode 111 = Shift_R NoSymbol Shift_R NoSymbol Shift_R NoSymbol
-! keycode 119 = Shift_R NoSymbol Shift_R NoSymbol Shift_R NoSymbol
+clear Shift
+add Shift = Shift_L
+keycode 62 = Return Return Return Return Return Return
 
 !
 ! Nav and mouse actions on vim keys
