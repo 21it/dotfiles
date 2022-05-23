@@ -18,15 +18,17 @@
 pointer = 1 2 3 5 4 6 7 8 9 10
 
 !
-! Caps_Lock and Alt_R toggle layers
+! Caps_Lock to toggle layers
 !
 clear Lock
 keycode 66 = ISO_Level3_Shift ISO_Level3_Shift
 
 !
-! Alt_R into BackSpace
+! Alt_R and other extra BackSpace and Return
 !
 keycode 108 = BackSpace BackSpace BackSpace BackSpace BackSpace BackSpace
+keycode  27 = r R Cyrillic_ka Cyrillic_KA BackSpace BackSpace
+keycode  41 = f F Cyrillic_a Cyrillic_A Return Return
 
 !
 ! Fn and media keys on numeric row
