@@ -1,3 +1,14 @@
+# Format drive
+
+```shell
+# unmount usb drive
+sudo umount /dev/sda1
+# format volume
+mkfs.vfat /dev/sda1
+# verify
+sudo fsck /dev/sda1
+```
+
 # Create bootable USB
 
 ```shell
