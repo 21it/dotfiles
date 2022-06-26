@@ -39,11 +39,11 @@ sudo apt-get update -y
 (
   log_bundle "nixpkgs"
   NIX_CHANNELS="$(nix-channel --list)"
-  EXPECTED_NIX_CHANNELS=$'nixpkgs https://nixos.org/channels/nixos-21.11\nnixpkgs-unstable https://nixos.org/channels/nixos-unstable'
+  EXPECTED_NIX_CHANNELS=$'nixpkgs https://nixos.org/channels/nixos-22.05\nnixpkgs-unstable https://nixos.org/channels/nixos-unstable'
   if [ "$NIX_CHANNELS" != "$EXPECTED_NIX_CHANNELS" ]; then
     log_error "got '$NIX_CHANNELS' instead of '$EXPECTED_NIX_CHANNELS'"
     log_installing "nixpkgs"
-    nix-channel --add https://nixos.org/channels/nixos-21.11 nixpkgs
+    nix-channel --add https://nixos.org/channels/nixos-22.05 nixpkgs
     nix-channel --add https://nixos.org/channels/nixos-unstable nixpkgs-unstable
   else
     log_already_installed "nixpkgs"
