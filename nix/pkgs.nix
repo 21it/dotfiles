@@ -13,4 +13,5 @@ with pkgs;
   inherit htmldoc pandoc;
   inherit qmk;
   inherit tutanota-desktop element-desktop;
+  inherit ccrypt;
 }
