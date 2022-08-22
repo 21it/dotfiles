@@ -52,26 +52,6 @@ sudo apt-get update -y
 )
 
 (
-  log_bundle "vim"
-  lazy_install "vim" "vim_configurable"
-  lazy_install "git"
-  lazy_install "ag" "silver-searcher"
-  lazy_install "node" "nodejs"
-  lazy_install "grip" "python38Packages.grip"
-  lazy_install "xdg-open" "xdg_utils"
-  DOTFILES_TARGET=~/.vim_runtime
-  if [ -d "$DOTFILES_TARGET" ]; then
-    log_already_exists "$DOTFILES_TARGET"
-  else
-    log_installing "$DOTFILES_TARGET"
-    git clone \
-      git@github.com:tim2CF/ultimate-haskell-ide.git \
-      "$DOTFILES_TARGET"
-    sh "$DOTFILES_TARGET/install_awesome_vimrc.sh"
-  fi
-)
-
-(
   log_bundle "i3wm"
   sudo apt-get install -y i3
   lazy_install "light"

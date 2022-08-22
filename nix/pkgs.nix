@@ -3,7 +3,7 @@
 }:
 with pkgs;
 {
-  inherit irssi slack skypeforlinux signal-desktop;
+  inherit irssi slack;
   inherit yarn;
   inherit xkbset xdotool;
   inherit ormolu hpack;
@@ -12,6 +12,6 @@ with pkgs;
   inherit feh imlib2 imagemagick;
   inherit htmldoc pandoc;
   inherit qmk;
-  inherit tutanota-desktop element-desktop;
   inherit ccrypt;
+  vi = import ./vi.nix;
 }
