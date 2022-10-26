@@ -5,7 +5,8 @@ volumes:
   pihole_dnsmasq: {}
 services:
   pihole:
-    image: pihole/pihole:latest
+    # image: pihole/pihole:latest
+    image: 21it/pihole:0.1
     # For DHCP it is recommended to remove these ports
     # and instead add: network_mode: "host"
     ports:
