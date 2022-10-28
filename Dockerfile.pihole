@@ -1,0 +1,7 @@
+FROM pihole/pihole:latest
+
+COPY pihole-cron.sh /opt/pihole-cron.sh
+RUN chmod a+x /opt/pihole-cron.sh && \
+    crontab -l | \
+      { cat; echo '* */12 * * * sudo /opt/pihole-cron.sh >> /var/log/cron.log 2>&1'; } | \
+      crontab -

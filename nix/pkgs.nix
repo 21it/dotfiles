@@ -13,5 +13,6 @@ with pkgs;
   inherit htmldoc pandoc;
   inherit qmk;
   inherit ccrypt;
+  inherit libreoffice xournal;
   vi = import ./vi.nix;
 }
