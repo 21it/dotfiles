@@ -5,7 +5,7 @@
   "CONSOLE_WIDTH": 80,
   "MAX_RES": 2160,
   "PLAYER": "mpv",
-  "PLAYERARGS": "",
+  "PLAYERARGS": "--no-video",
   "ENCODER": 0,
   "NOTIFIER": "",
   "CHECKUPDATE": true,
