@@ -1,14 +1,7 @@
 FROM pihole/pihole:latest
 
-RUN git clone --depth 1 \
-      https://github.com/kboghdady/youTube_ads_4_pi-hole.git \
-      /opt/pihole-ytblk && \
-    sed -i "s|\$(pwd)|'/opt/pihole-ytblk'|g" \
-      /opt/pihole-ytblk/youtube.sh && \
-    echo "$(tac /opt/pihole-ytblk/youtube.sh | sed '1,5 d' | tac)" \
-      > /opt/pihole-ytblk/youtube.sh && \
-    chmod a+x \
-      /opt/pihole-ytblk/youtube.sh && \
+COPY pihole-cron.sh /opt/pihole-cron.sh
+RUN chmod a+x /opt/pihole-cron.sh && \
     crontab -l | \
-      { cat; echo "0 */1 * * * sudo /opt/pihole-ytblk/youtube.sh >/dev/null"; } | \
+      { cat; echo '* */12 * * * sudo /opt/pihole-cron.sh >> /var/log/cron.log 2>&1'; } | \
       crontab -
