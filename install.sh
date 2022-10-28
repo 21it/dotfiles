@@ -160,6 +160,13 @@ sudo apt-get install -y qemu-user-static binfmt-support
   lazy_install "openssl"
 )
 
+(
+  log_bundle "yewtube"
+  sudo apt-get install python3-pip mpv -y
+  pip install yewtube
+  lazy_copy yewtube-config ~/.config/mps-youtube/config.json
+)
+
 sudo apt-get autoremove -y
 
 log_success "installation finished"
