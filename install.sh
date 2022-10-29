@@ -146,7 +146,6 @@ done
   NIXPKGS_ALLOW_UNFREE=1 nix-env -i -f ./nix/pkgs.nix
 )
 
-sudo apt-get install tlp -y
 sudo apt-get install ffmpeg redshift net-tools -y
 sudo apt-get install alsa-base pulseaudio -y
 sudo snap install ledger-live-desktop
@@ -165,6 +164,29 @@ sudo apt-get install -y qemu-user-static binfmt-support
   sudo apt-get install python3-pip mpv -y
   pip install yewtube
   lazy_copy yewtube-config ~/.config/mps-youtube/config.json
+)
+
+(
+  #
+  # We need to replace the intel-pstate CPU power management driver
+  # with the acpi-cpufreq one. This allows for better performance
+  # and slightly more efficient power use in some cases.
+  #
+  # Disable intel-pstate in grub config. To disable the default
+  # intel-pstate driver, you need to edit /etc/default/grub:
+  #
+  # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash intel_pstate=disable"
+  #
+  # After making our edits, we need to refresh grub:
+  #
+  # sudo update-grub
+  #
+  log_bundle "power"
+  sudo apt-get install -y \
+    acpi-support acpid acpi \
+    cpufreqd cpufrequtils indicator-cpufreq cpupower-gui \
+    linux-tools-$(uname -r)
+  sudo cpufreq-set -g ondemand
 )
 
 sudo apt-get autoremove -y

@@ -14,5 +14,6 @@ with pkgs;
   inherit qmk;
   inherit ccrypt;
   inherit libreoffice xournal;
+  inherit s-tui;
   vi = import ./vi.nix;
 }
