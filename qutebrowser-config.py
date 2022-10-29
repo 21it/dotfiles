@@ -1952,3 +1952,8 @@ c.content.host_blocking.lists = [
 # config.bind('Y', 'prompt-accept --save yes', mode='yesno')
 # config.bind('n', 'prompt-accept no', mode='yesno')
 # config.bind('y', 'prompt-accept yes', mode='yesno')
+
+config.bind('K', 'tab-next')
+config.bind('J', 'tab-prev')
+config.bind('<Ctrl-l>', 'set-cmd-text :open -w {url:pretty}')
+c.colors.webpage.prefers_color_scheme_dark = True
