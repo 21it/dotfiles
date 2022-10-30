@@ -1953,7 +1953,19 @@ c.content.host_blocking.lists = [
 # config.bind('n', 'prompt-accept no', mode='yesno')
 # config.bind('y', 'prompt-accept yes', mode='yesno')
 
+#
+# Custom configs
+#
+
+c.qt.highdpi = True
+c.zoom.default = '130%'
+c.tabs.last_close = "close"
+c.content.images = False
+c.content.cookies.accept = "no-3rdparty"
+c.content.default_encoding = "utf-8"
+c.content.webrtc_ip_handling_policy = "disable-non-proxied-udp"
+
+config.bind("Q", "quit")
 config.bind('K', 'tab-next')
 config.bind('J', 'tab-prev')
 config.bind('<Ctrl-l>', 'set-cmd-text :open -w {url:pretty}')
-c.colors.webpage.prefers_color_scheme_dark = True
