@@ -186,7 +186,7 @@ sudo apt-get install -y qemu-user-static binfmt-support
     acpi-support acpid acpi \
     cpufreqd cpufrequtils indicator-cpufreq cpupower-gui \
     linux-tools-$(uname -r)
-  sudo cpufreq-set -g ondemand
+  sudo cpufreq-set -g performance
 )
 
 sudo apt-get autoremove -y
