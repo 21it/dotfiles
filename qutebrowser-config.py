@@ -1958,7 +1958,7 @@ c.content.host_blocking.lists = [
 #
 
 c.qt.highdpi = True
-c.zoom.default = '100%'
+c.zoom.default = '130%'
 c.tabs.last_close = "ignore"
 c.content.images = True
 c.content.cookies.accept = "no-3rdparty"
