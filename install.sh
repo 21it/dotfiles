@@ -186,6 +186,10 @@ sudo apt-get install -y qemu-user-static binfmt-support
     acpi-support acpid acpi \
     cpufreqd cpufrequtils indicator-cpufreq cpupower-gui \
     linux-tools-$(uname -r)
+  grep -q 'GOVERNOR="performance"' /etc/default/cpufrequtils || \
+    echo 'GOVERNOR="performance"' | \
+    sudo tee /etc/default/cpufrequtils
+  sudo systemctl disable ondemand
   sudo cpufreq-set -g performance
 )
 
