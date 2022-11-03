@@ -12,10 +12,10 @@
 ! F is the keysym output when the key is pressed + Shift + ISO_Level3_Shift
 !
 
-!
-! Natural scrolling
-!
-pointer = 1 2 3 5 4 6 7 8 9 10
+!!
+!! Natural scrolling
+!!
+!pointer = 1 2 3 5 4 6 7 8 9 10
 
 !
 ! Caps_Lock to toggle layers
@@ -23,12 +23,12 @@ pointer = 1 2 3 5 4 6 7 8 9 10
 clear Lock
 keycode 66 = ISO_Level3_Shift ISO_Level3_Shift
 
-!
-! Alt_R and other extra BackSpace and Return
-!
-keycode 108 = BackSpace BackSpace BackSpace BackSpace BackSpace BackSpace
-keycode  27 = r R Cyrillic_ka Cyrillic_KA BackSpace BackSpace
-keycode  41 = f F Cyrillic_a Cyrillic_A Return Return
+!!
+!! Alt_R and other extra BackSpace and Return
+!!
+!keycode 108 = BackSpace BackSpace BackSpace BackSpace BackSpace BackSpace
+!keycode  27 = r R Cyrillic_ka Cyrillic_KA BackSpace BackSpace
+!keycode  41 = f F Cyrillic_a Cyrillic_A Return Return
 
 !
 ! Fn and media keys on numeric row
@@ -59,10 +59,12 @@ keycode 49 = Escape Escape Escape Escape Escape Escape
 !
 ! Right super key
 !
-clear Control
-keycode 105 = Super_R Super_R Super_R Super_R Super_R Super_R
-keycode 135 = Super_R Super_R Super_R Super_R Super_R Super_R
-add Control = Control_L
+! TODO : use print screen
+!
+!clear Control
+!keycode 105 = Super_R Super_R Super_R Super_R Super_R Super_R
+!keycode 135 = Super_R Super_R Super_R Super_R Super_R Super_R
+!add Control = Control_L
 
 !
 ! Right shift into enter
@@ -74,22 +76,22 @@ keycode 62 = Return Return Return Return Return Return
 !
 ! Nav and mouse actions on vim keys
 !
-! Home + Mouse Hold
-keycode 29 = y Y Cyrillic_en Cyrillic_EN Home KP_Insert
-! Page Down + Mouse Left Click
-keycode 30 = u U Cyrillic_ghe Cyrillic_GHE Next u
-! Page Up + Mouse Right Click
-keycode 31 = i I Cyrillic_sha Cyrillic_SHA Prior i
-! End + Mouse Release
-keycode 32 = o O Cyrillic_shcha Cyrillic_SHCHA End KP_Delete
+!! Home + Mouse Hold
+!keycode 29 = y Y Cyrillic_en Cyrillic_EN Home KP_Insert
+!! Page Down + Mouse Left Click
+!keycode 30 = u U Cyrillic_ghe Cyrillic_GHE Next u
+!! Page Up + Mouse Right Click
+!keycode 31 = i I Cyrillic_sha Cyrillic_SHA Prior i
+!! End + Mouse Release
+!keycode 32 = o O Cyrillic_shcha Cyrillic_SHCHA End KP_Delete
 ! Move Left
-keycode 43 = h H Cyrillic_er Cyrillic_ER Left KP_4
+keycode 43 = h H Cyrillic_er Cyrillic_ER Left Home
 ! Move Down
-keycode 44 = j J Cyrillic_o Cyrillic_O Down KP_2
+keycode 44 = j J Cyrillic_o Cyrillic_O Down Next
 ! Move Up
-keycode 45 = k K Cyrillic_el Cyrillic_EL Up KP_8
+keycode 45 = k K Cyrillic_el Cyrillic_EL Up Prior
 ! Move Right
-keycode 46 = l L Cyrillic_de Cyrillic_DE Right KP_6
+keycode 46 = l L Cyrillic_de Cyrillic_DE Right End
 ! Insert + Mouse Scroll Down
 keycode 58 = m M Cyrillic_softsign Cyrillic_SOFTSIGN Insert XF86ScrollDown
 ! Mouse Scroll Up
