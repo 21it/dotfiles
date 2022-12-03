@@ -1961,11 +1961,12 @@ c.qt.highdpi = True
 c.zoom.default = '130%'
 c.tabs.last_close = "ignore"
 c.content.images = False
+c.content.autoplay = False
 c.content.cookies.accept = "no-3rdparty"
 c.content.default_encoding = "utf-8"
 c.content.webrtc_ip_handling_policy = "disable-non-proxied-udp"
 
-c.url.default_page = 'about:blank'
+c.url.default_page = 'https://hoogle.haskell.org/'
 c.url.start_pages = ['about:blank']
 
 config.bind('Q', 'quit')
