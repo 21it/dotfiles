@@ -1960,13 +1960,17 @@ c.content.host_blocking.lists = [
 c.qt.highdpi = True
 c.zoom.default = '130%'
 c.tabs.last_close = "ignore"
-c.content.images = True
+c.content.images = False
 c.content.cookies.accept = "no-3rdparty"
 c.content.default_encoding = "utf-8"
 c.content.webrtc_ip_handling_policy = "disable-non-proxied-udp"
 
-config.bind("Q", "quit")
+c.url.default_page = 'about:blank'
+c.url.start_pages = ['about:blank']
+
+config.bind('Q', 'quit')
 config.bind('K', 'tab-next')
 config.bind('J', 'tab-prev')
 config.bind('<Ctrl-l>', 'set-cmd-text :open -w {url:pretty}')
 config.bind('F', 'hint all run open -t -r {hint-url}')
+config.bind('I', 'config-cycle -p -t -u *://*.{url:host}/* content.images ;; reload')
