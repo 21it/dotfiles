@@ -1,0 +1,4 @@
+xkb_symbols "local" {
+  key.type[Group1] = "FOUR_LEVEL";
+  key <SPCE> { symbols[Group1] = [ space, space, Tab, ISO_Left_Tab ] };
+};

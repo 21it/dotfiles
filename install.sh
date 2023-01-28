@@ -67,7 +67,10 @@ sudo apt-get update -y
   lazy_copy termite-config ~/.config/termite/config
   lazy_install "termite" "termite" "nix-env -iA nixpkgs.termite && tic -x $DOTFILES_SOURCE_DIR/termite.terminfo"
   sudo apt-get install -y language-pack-ru ttf-ancient-fonts
+  mkdir -p ~/.xkb/keymap
+  mkdir -p ~/.xkb/symbols
   lazy_copy .Xmodmap ~/.Xmodmap
+  lazy_copy .Xkb ~/.xkb/symbols/local
 )
 
 #
