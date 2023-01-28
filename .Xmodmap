@@ -84,14 +84,16 @@ keycode 62 = Return Return Return Return Return Return
 !keycode 31 = i I Cyrillic_sha Cyrillic_SHA Prior i
 !! End + Mouse Release
 !keycode 32 = o O Cyrillic_shcha Cyrillic_SHCHA End KP_Delete
-! Move Left
-keycode 43 = h H Cyrillic_er Cyrillic_ER Left Home
-! Move Down
-keycode 44 = j J Cyrillic_o Cyrillic_O Down Next
-! Move Up
-keycode 45 = k K Cyrillic_el Cyrillic_EL Up Prior
-! Move Right
-keycode 46 = l L Cyrillic_de Cyrillic_DE Right End
+
+!! Move Left
+!keycode 43 = h H Cyrillic_er Cyrillic_ER Left Home
+!! Move Down
+!keycode 44 = j J Cyrillic_o Cyrillic_O Down Next
+!! Move Up
+!keycode 45 = k K Cyrillic_el Cyrillic_EL Up Prior
+!! Move Right
+!keycode 46 = l L Cyrillic_de Cyrillic_DE Right End
+
 ! Insert + Mouse Scroll Down
 keycode 58 = m M Cyrillic_softsign Cyrillic_SOFTSIGN Insert XF86ScrollDown
 ! Mouse Scroll Up
