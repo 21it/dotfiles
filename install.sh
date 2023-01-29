@@ -69,8 +69,13 @@ sudo apt-get update -y
   sudo apt-get install -y language-pack-ru ttf-ancient-fonts
   mkdir -p ~/.xkb/keymap
   mkdir -p ~/.xkb/symbols
+  mkdir -p ~/.xkb/types
+  lazy_copy xkb-symbols ~/.xkb/symbols/local
+  lazy_copy xkb-types ~/.xkb/types/local
+  #
+  # TODO : completely replace xmodmap with xkb!!!
+  #
   lazy_copy .Xmodmap ~/.Xmodmap
-  lazy_copy .Xkb ~/.xkb/symbols/local
 )
 
 #

@@ -1,0 +1,16 @@
+default xkb_types "local" {
+  include "complete"
+  type "CUSTLOCK" {
+    modifiers= Shift+Mod3;
+    // Maps shift and no Mod3.
+    // Shift+Alt goes here, too, because Alt isn't in modifiers.
+    map[Shift] = Level2;
+    map[Mod3] = Level3;
+    // Maps shift and Mod3.
+    // Shift+Mod3+Alt goes here, too.
+    map[Shift+Mod3] = Level3;
+    level_name[Level1]= "Base";
+    level_name[Level2]= "Shift";
+    level_name[Level3]= "Mod3";
+  };
+};

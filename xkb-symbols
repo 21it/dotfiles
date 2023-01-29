@@ -1,11 +1,14 @@
 xkb_symbols "local" {
-  key.type[Group1] = "FOUR_LEVEL";
+  modifier_map Mod3 { ISO_Level5_Shift };
+  key.type = "ONE_LEVEL";
+  key <CAPS> { [ ISO_Level5_Shift ] };
+  key.type = "CUSTLOCK";
   key <SPCE> {
     symbols[Group1] = [ space, space, Tab, ISO_Left_Tab ],
     symbols[Group2] = [ space, space, Tab, ISO_Left_Tab ]
   };
   key <AC06> {
-    symbols[Group1] = [ h, H, Left, Home ],
+    symbols[Group1] = [ h, H, Left, Home  ],
     symbols[Group2] = [ Cyrillic_er, Cyrillic_ER, Left, Home ]
   };
   key <AC07> {
