@@ -94,7 +94,7 @@ keycode 51 = backslash bar Cyrillic_io Cyrillic_IO grave asciitilde
 !! Move Right
 !keycode 46 = l L Cyrillic_de Cyrillic_DE Right End
 
-! Insert + Mouse Scroll Down
-keycode 58 = m M Cyrillic_softsign Cyrillic_SOFTSIGN Insert XF86ScrollDown
-! Mouse Scroll Up
-keycode 59 = comma less Cyrillic_be Cyrillic_BE Delete XF86ScrollUp
+!! Insert + Mouse Scroll Down
+!keycode 58 = m M Cyrillic_softsign Cyrillic_SOFTSIGN Insert XF86ScrollDown
+!! Mouse Scroll Up
+!keycode 59 = comma less Cyrillic_be Cyrillic_BE Delete XF86ScrollUp

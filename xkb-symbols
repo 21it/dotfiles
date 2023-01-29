@@ -7,7 +7,7 @@ xkb_symbols "local" {
   key <TAB> { [ Tab, Tab, ISO_Level3_Shift, ISO_Level3_Shift ] };
   key <SPCE> { [ space, space, Tab, Tab ] };
   key <AC06> {
-    symbols[Group1] = [ h, H, Left, Home  ],
+    symbols[Group1] = [ h, H, Left, Home ],
     symbols[Group2] = [ Cyrillic_er, Cyrillic_ER, Left, Home ]
   };
   key <AC07> {
@@ -21,5 +21,13 @@ xkb_symbols "local" {
   key <AC09> {
     symbols[Group1] = [ l, L, Right, End ],
     symbols[Group2] = [ Cyrillic_de, Cyrillic_DE, Right, End ]
+  };
+  key <AB07> {
+    symbols[Group1] = [ m, M, Insert, XF86ScrollDown ],
+    symbols[Group2] = [ Cyrillic_softsign, Cyrillic_SOFTSIGN, Insert, XF86ScrollDown ]
+  };
+  key <AB08> {
+    symbols[Group1] = [ comma, less, Delete, XF86ScrollUp ],
+    symbols[Group2] = [ Cyrillic_be, Cyrillic_BE, Delete, XF86ScrollUp ]
   };
 };
