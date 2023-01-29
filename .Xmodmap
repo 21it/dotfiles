@@ -17,11 +17,11 @@
 !!
 !pointer = 1 2 3 5 4 6 7 8 9 10
 
-!
-! Caps_Lock to toggle layers
-!
-clear Lock
-keycode 66 = ISO_Level3_Shift ISO_Level3_Shift
+!!
+!! Caps_Lock to toggle layers
+!!
+!clear Lock
+!keycode 66 = ISO_Level3_Shift ISO_Level3_Shift
 
 !!
 !! Alt_R and other extra BackSpace and Return
@@ -66,12 +66,12 @@ keycode 51 = backslash bar Cyrillic_io Cyrillic_IO grave asciitilde
 !keycode 135 = Super_R Super_R Super_R Super_R Super_R Super_R
 !add Control = Control_L
 
-!
-! Right shift into enter
-!
-clear Shift
-add Shift = Shift_L
-keycode 62 = Return Return Return Return Return Return
+!!
+!! Right shift into enter
+!!
+!clear Shift
+!add Shift = Shift_L
+!keycode 62 = Return Return Return Return Return Return
 
 !
 ! Nav and mouse actions on vim keys

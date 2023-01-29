@@ -2,10 +2,11 @@ xkb_symbols "local" {
   modifier_map Mod3 { ISO_Level5_Shift };
   key.type = "ONE_LEVEL";
   key <CAPS> { [ ISO_Level5_Shift ] };
+  key <RTSH> { [ Return ] };
   key.type = "CUSTLOCK";
   key <SPCE> {
-    symbols[Group1] = [ space, space, Tab, ISO_Left_Tab ],
-    symbols[Group2] = [ space, space, Tab, ISO_Left_Tab ]
+    symbols[Group1] = [ space, space, Tab ],
+    symbols[Group2] = [ space, space, Tab ]
   };
   key <AC06> {
     symbols[Group1] = [ h, H, Left, Home  ],
