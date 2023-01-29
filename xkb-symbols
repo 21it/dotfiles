@@ -3,11 +3,9 @@ xkb_symbols "local" {
   key.type = "ONE_LEVEL";
   key <CAPS> { [ ISO_Level5_Shift ] };
   key <RTSH> { [ Return ] };
-  key.type = "CUSTLOCK";
-  key <SPCE> {
-    symbols[Group1] = [ space, space, Tab ],
-    symbols[Group2] = [ space, space, Tab ]
-  };
+  key.type = "MEGAMOD";
+  key <TAB> { [ Tab, Tab, ISO_Level3_Shift, ISO_Level3_Shift ] };
+  key <SPCE> { [ space, space, Tab, Tab ] };
   key <AC06> {
     symbols[Group1] = [ h, H, Left, Home  ],
     symbols[Group2] = [ Cyrillic_er, Cyrillic_ER, Left, Home ]

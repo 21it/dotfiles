@@ -1,16 +1,17 @@
 default xkb_types "local" {
   include "complete"
-  type "CUSTLOCK" {
-    modifiers= Shift+Mod3;
-    // Maps shift and no Mod3.
-    // Shift+Alt goes here, too, because Alt isn't in modifiers.
+  type "MEGAMOD" {
+    modifiers = Shift+Mod3+Mod5;
     map[Shift] = Level2;
-    map[Mod3] = Level3;
-    // Maps shift and Mod3.
-    // Shift+Mod3+Alt goes here, too.
     map[Shift+Mod3] = Level3;
+    map[Shift+Mod5] = Level2;
+    map[Shift+Mod3+Mod5] = Level4;
+    map[Mod3] = Level3;
+    map[Mod3+Mod5] = Level4;
+    map[Mod5] = Level1;
     level_name[Level1]= "Base";
     level_name[Level2]= "Shift";
-    level_name[Level3]= "Mod3";
+    level_name[Level3]= "Lower";
+    level_name[Level4]= "Raise";
   };
 };
