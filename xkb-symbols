@@ -23,11 +23,11 @@ xkb_symbols "local" {
     symbols[Group2] = [ Cyrillic_de, Cyrillic_DE, Right, End ]
   };
   key <AB07> {
-    symbols[Group1] = [ m, M, Insert, XF86ScrollDown ],
-    symbols[Group2] = [ Cyrillic_softsign, Cyrillic_SOFTSIGN, Insert, XF86ScrollDown ]
+    symbols[Group1] = [ m, M, Delete, XF86ScrollDown ],
+    symbols[Group2] = [ Cyrillic_softsign, Cyrillic_SOFTSIGN, Delete, XF86ScrollDown ]
   };
   key <AB08> {
-    symbols[Group1] = [ comma, less, Delete, XF86ScrollUp ],
-    symbols[Group2] = [ Cyrillic_be, Cyrillic_BE, Delete, XF86ScrollUp ]
+    symbols[Group1] = [ comma, less, Insert, XF86ScrollUp ],
+    symbols[Group2] = [ Cyrillic_be, Cyrillic_BE, Insert, XF86ScrollUp ]
   };
 };
