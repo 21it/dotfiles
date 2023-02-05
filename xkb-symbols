@@ -11,12 +11,12 @@ xkb_symbols "local" {
     symbols[Group2] = [ 1, exclam, F1, exclamdown ]
   };
   key <AE02> {
-    symbols[Group1] = [ 2, at, F2, dead_doubleacute ],
-    symbols[Group2] = [ 2, quotedbl, F2, dead_doubleacute ]
+    symbols[Group1] = [ 2, at, F2, XF86MonBrightnessDown ],
+    symbols[Group2] = [ 2, quotedbl, F2, XF86MonBrightnessDown ]
   };
   key <AE03> {
-    symbols[Group1] = [ 3, numbersign, F3, dead_macron ],
-    symbols[Group2] = [ 3, numerosign, F3, dead_macron ]
+    symbols[Group1] = [ 3, numbersign, F3, XF86MonBrightnessUp ],
+    symbols[Group2] = [ 3, numerosign, F3, XF86MonBrightnessUp ]
   };
   key <AE04> {
     symbols[Group1] = [ 4, dollar, F4, XF86AudioMicMute ],

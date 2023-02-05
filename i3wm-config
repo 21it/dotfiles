@@ -34,16 +34,16 @@ exec --no-startup-id nm-applet
 set $refresh_i3status killall -SIGUSR1 i3status
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym Mod5+Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym Mod3+Mod5+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym Mod5+Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym Mod3+Mod5+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym Mod5+Shift+XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym Mod3+Mod5+XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym Mod5+Shift+XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym Mod3+Mod5+XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -195,31 +195,29 @@ bar {
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym Mod5+Shift+XF86AudioPlay exec playerctl play-pause
-bindsym Mod5+Shift+XF86AudioNext exec playerctl next
-bindsym Mod5+Shift+XF86AudioPrev exec playerctl previous
+bindsym Mod3+Mod5+XF86AudioPlay exec playerctl play-pause
+bindsym Mod3+Mod5+XF86AudioNext exec playerctl next
+bindsym Mod3+Mod5+XF86AudioPrev exec playerctl previous
 
 # keyboard backlight
 bindsym XF86KbdBrightnessDown exec light -U 33 -s sysfs/leds/smc::kbd_backlight
 bindsym XF86KbdBrightnessUp exec light -A 33 -s sysfs/leds/smc::kbd_backlight
-bindsym Mod5+Shift+XF86KbdBrightnessDown exec light -U 33 -s sysfs/leds/smc::kbd_backlight
-bindsym Mod5+Shift+XF86KbdBrightnessUp exec light -A 33 -s sysfs/leds/smc::kbd_backlight
+bindsym Mod3+Mod5+XF86KbdBrightnessDown exec light -U 33 -s sysfs/leds/smc::kbd_backlight
+bindsym Mod3+Mod5+XF86KbdBrightnessUp exec light -A 33 -s sysfs/leds/smc::kbd_backlight
 
 # screen brightness
 bindsym XF86MonBrightnessDown exec "brightnessctl s 10-"
 bindsym XF86MonBrightnessUp exec "brightnessctl s +10"
-bindsym Mod5+Shift+XF86MonBrightnessDown exec "brightnessctl s 10-"
-bindsym Mod5+Shift+XF86MonBrightnessUp exec "brightnessctl s +10"
+bindsym Mod3+Mod5+XF86MonBrightnessDown exec "brightnessctl s 10-"
+bindsym Mod3+Mod5+XF86MonBrightnessUp exec "brightnessctl s +10"
 
 # mouse actions
 bindsym Mod5+Shift+u exec "xdotool click --clearmodifiers 1"
 bindsym Mod5+Shift+i exec "xdotool click --clearmodifiers 3"
-bindsym Mod5+Shift+XF86ScrollDown exec "xdotool click --clearmodifiers 4"
-bindsym Mod5+Shift+XF86ScrollUp exec "xdotool click --clearmodifiers 5"
+bindsym XF86ScrollDown exec "xdotool click --clearmodifiers 4"
+bindsym XF86ScrollUp exec "xdotool click --clearmodifiers 5"
 bindsym Mod3+Mod5+XF86ScrollDown exec "xdotool click --clearmodifiers 4"
 bindsym Mod3+Mod5+XF86ScrollUp exec "xdotool click --clearmodifiers 5"
-bindsym Shift+Mod3+Mod5+XF86ScrollDown exec "xdotool click --clearmodifiers 4"
-bindsym Shift+Mod3+Mod5+XF86ScrollUp exec "xdotool click --clearmodifiers 5"
 
 # custom bindings and rc commands
 bindsym Ctrl+Mod1+q exec "i3lock --color=000000"
@@ -233,10 +231,3 @@ exec_always --no-startup-id "xkbset m && xkbset exp =m && xkbset ma 60 10 10 20 
 exec_always --no-startup-id "setxkbmap -option && setxkbmap -types local -layout us,ru -variant altgr-intl, -option grp:ctrls_toggle -print | sed -e '/xkb_symbols/s/\"[[:space:]]/+local&/' > $HOME/.xkb/keymap/custom && xkbcomp -w0 -I$HOME/.xkb -R$HOME/.xkb keymap/custom $DISPLAY"
 exec_always --no-startup-id "xrandr --auto; if [ \"$(xrandr | grep ' connected ' | wc -l)\" -eq 1 ]; then echo 'Xft.dpi: 148' | xrdb && xrandr --output eDP-1 --auto; else echo 'Xft.dpi: 96' | xrdb && xrandr --output eDP-1 --off; fi"
 exec --no-startup-id "unclutter &"
-#exec --no-startup-id "redshift -O 3000"
-exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal --class fullscreen'
-exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal --class fullscreen'
-exec --no-startup-id i3-msg 'workspace 3; exec i3-sensible-terminal --class fullscreen'
-exec --no-startup-id i3-msg 'workspace 4; exec i3-sensible-terminal --class fullscreen'
-exec --no-startup-id i3-msg 'workspace 10; exec firefox -new-tab -url https://soundcloud.com/complexion -new-tab -url https://github.com; workspace 1'
-for_window [class="fullscreen"] fullscreen enable
