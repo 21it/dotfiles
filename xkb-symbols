@@ -58,6 +58,28 @@ xkb_symbols "local" {
     symbols[Group1] = [ backslash, bar, grave, asciitilde ],
     symbols[Group2] = [ Cyrillic_io, Cyrillic_IO, grave, asciitilde ]
   };
+  key <AD06> {
+    symbols[Group1] = [ y, Y, y, Y, KP_Insert ],
+    symbols[Group2] = [ Cyrillic_en, Cyrillic_EN, Cyrillic_en, Cyrillic_EN, KP_Insert ]
+  };
+  key <AD07> {
+    symbols[Group1] = [ u, U, u, U, Pointer_Button1 ],
+    symbols[Group2] = [
+      Cyrillic_ghe, Cyrillic_GHE, Cyrillic_ghe, Cyrillic_GHE, Pointer_Button1
+    ]
+  };
+  key <AD08> {
+    symbols[Group1] = [ i, I, i, I, Pointer_Button3],
+    symbols[Group2] = [
+      Cyrillic_sha, Cyrillic_SHA, Cyrillic_sha, Cyrillic_SHA, Pointer_Button3
+    ]
+  };
+  key <AD09> {
+    symbols[Group1] = [ o, O, o, O, KP_Delete ],
+    symbols[Group2] = [
+      Cyrillic_shcha, Cyrillic_SHCHA, Cyrillic_shcha, Cyrillic_SHCHA, KP_Delete
+    ]
+  };
   key <AC06> {
     symbols[Group1] = [ h, H, Left, Home, KP_4 ],
     symbols[Group2] = [ Cyrillic_er, Cyrillic_ER, Left, Home, KP_4 ]
@@ -75,11 +97,13 @@ xkb_symbols "local" {
     symbols[Group2] = [ Cyrillic_de, Cyrillic_DE, Right, End, KP_6 ]
   };
   key <AB07> {
-    symbols[Group1] = [ m, M, Delete, XF86ScrollDown ],
-    symbols[Group2] = [ Cyrillic_softsign, Cyrillic_SOFTSIGN, Delete, XF86ScrollDown ]
+    symbols[Group1] = [ m, M, Delete, Delete, XF86ScrollDown ],
+    symbols[Group2] = [
+      Cyrillic_softsign, Cyrillic_SOFTSIGN, Delete, Delete, XF86ScrollDown
+    ]
   };
   key <AB08> {
-    symbols[Group1] = [ comma, less, Insert, XF86ScrollUp ],
-    symbols[Group2] = [ Cyrillic_be, Cyrillic_BE, Insert, XF86ScrollUp ]
+    symbols[Group1] = [ comma, less, Insert, Insert, XF86ScrollUp ],
+    symbols[Group2] = [ Cyrillic_be, Cyrillic_BE, Insert, Insert, XF86ScrollUp ]
   };
 };

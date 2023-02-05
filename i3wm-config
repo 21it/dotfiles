@@ -212,12 +212,12 @@ bindsym Mod3+Mod5+XF86MonBrightnessDown exec "brightnessctl s 10-"
 bindsym Mod3+Mod5+XF86MonBrightnessUp exec "brightnessctl s +10"
 
 # mouse actions
-bindsym Mod5+Shift+u exec "xdotool click --clearmodifiers 1"
-bindsym Mod5+Shift+i exec "xdotool click --clearmodifiers 3"
+#bindsym Mod3+Mod5+Shift+Pointer_Button1 exec "xdotool click --clearmodifiers 1"
+#bindsym Mod3+Mod5+Shift+Pointer_Button3 exec "xdotool click --clearmodifiers 3"
 bindsym XF86ScrollDown exec "xdotool click --clearmodifiers 4"
 bindsym XF86ScrollUp exec "xdotool click --clearmodifiers 5"
-bindsym Mod3+Mod5+XF86ScrollDown exec "xdotool click --clearmodifiers 4"
-bindsym Mod3+Mod5+XF86ScrollUp exec "xdotool click --clearmodifiers 5"
+bindsym Mod3+Mod5+Shift+XF86ScrollDown exec "xdotool click --clearmodifiers 4"
+bindsym Mod3+Mod5+Shift+XF86ScrollUp exec "xdotool click --clearmodifiers 5"
 
 # custom bindings and rc commands
 bindsym Ctrl+Mod1+q exec "i3lock --color=000000"
