@@ -6,6 +6,58 @@ xkb_symbols "local" {
   key.type = "MEGAMOD";
   key <TAB> { [ Escape, Escape, ISO_Level3_Shift, ISO_Level3_Shift ] };
   key <SPCE> { [ space, space, Tab, Tab ] };
+  key <AE01> {
+    symbols[Group1] = [ 1, exclam, F1, exclamdown ],
+    symbols[Group2] = [ 1, exclam, F1, exclamdown ]
+  };
+  key <AE02> {
+    symbols[Group1] = [ 2, at, F2, dead_doubleacute ],
+    symbols[Group2] = [ 2, quotedbl, F2, dead_doubleacute ]
+  };
+  key <AE03> {
+    symbols[Group1] = [ 3, numbersign, F3, dead_macron ],
+    symbols[Group2] = [ 3, numerosign, F3, dead_macron ]
+  };
+  key <AE04> {
+    symbols[Group1] = [ 4, dollar, F4, XF86AudioMicMute ],
+    symbols[Group2] = [ 4, semicolon, F4, XF86AudioMicMute ]
+  };
+  key <AE05> {
+    symbols[Group1] = [ 5, percent, F5, dead_cedilla ],
+    symbols[Group2] = [ 5, percent, F5, dead_cedilla ]
+  };
+  key <AE06> {
+    symbols[Group1] = [ 6, asciicircum, F6, onequarter ],
+    symbols[Group2] = [ 6, colon, F6, onequarter ]
+  };
+  key <AE07> {
+    symbols[Group1] = [ 7, ampersand, F7, XF86AudioPrev ],
+    symbols[Group2] = [ 7, question, F7, XF86AudioPrev ]
+  };
+  key <AE08> {
+    symbols[Group1] = [ 8, asterisk, F8, XF86AudioPlay ],
+    symbols[Group2] = [ 8, asterisk, F8, XF86AudioPlay ]
+  };
+  key <AE09> {
+    symbols[Group1] = [ 9, parenleft, F9, XF86AudioNext ],
+    symbols[Group2] = [ 9, parenleft, F9, XF86AudioNext ]
+  };
+  key <AE10> {
+    symbols[Group1] = [ 0, parenright, F10, XF86AudioMute ],
+    symbols[Group2] = [ 0, parenright, F10, XF86AudioMute ]
+  };
+  key <AE11> {
+    symbols[Group1] = [ minus, underscore, F11, XF86AudioLowerVolume ],
+    symbols[Group2] = [ minus, underscore, F11, XF86AudioLowerVolume ]
+  };
+  key <AE12> {
+    symbols[Group1] = [ equal, plus, F12, XF86AudioRaiseVolume ],
+    symbols[Group2] = [ equal, plus, F12, XF86AudioRaiseVolume ]
+  };
+  key <BKSL> {
+    symbols[Group1] = [ backslash, bar, grave, asciitilde ],
+    symbols[Group2] = [ Cyrillic_io, Cyrillic_IO, grave, asciitilde ]
+  };
   key <AC06> {
     symbols[Group1] = [ h, H, Left, Home ],
     symbols[Group2] = [ Cyrillic_er, Cyrillic_ER, Left, Home ]

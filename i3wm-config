@@ -230,7 +230,7 @@ bindsym $mod+Shift+n exec maim --select | xclip -selection clipboard -t image/pn
 
 # rc commands
 exec_always --no-startup-id "xkbset m && xkbset exp =m && xkbset ma 60 10 10 20 10 && xkbset exp =ma"
-exec_always --no-startup-id "setxkbmap -option && setxkbmap -types local -layout us,ru -variant altgr-intl, -option grp:ctrls_toggle -print | sed -e '/xkb_symbols/s/\"[[:space:]]/+local&/' > $HOME/.xkb/keymap/custom && xkbcomp -w0 -I$HOME/.xkb -R$HOME/.xkb keymap/custom $DISPLAY && xmodmap ~/.Xmodmap"
+exec_always --no-startup-id "setxkbmap -option && setxkbmap -types local -layout us,ru -variant altgr-intl, -option grp:ctrls_toggle -print | sed -e '/xkb_symbols/s/\"[[:space:]]/+local&/' > $HOME/.xkb/keymap/custom && xkbcomp -w0 -I$HOME/.xkb -R$HOME/.xkb keymap/custom $DISPLAY"
 exec_always --no-startup-id "xrandr --auto; if [ \"$(xrandr | grep ' connected ' | wc -l)\" -eq 1 ]; then echo 'Xft.dpi: 148' | xrdb && xrandr --output eDP-1 --auto; else echo 'Xft.dpi: 96' | xrdb && xrandr --output eDP-1 --off; fi"
 exec --no-startup-id "unclutter &"
 #exec --no-startup-id "redshift -O 3000"
