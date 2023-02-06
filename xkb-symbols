@@ -1,19 +1,23 @@
 xkb_symbols "local" {
   modifier_map Mod3 { ISO_Level5_Shift };
   modifier_map Mod5 { ISO_Level3_Shift };
-  modifier_map Mod2 { Hyper_L };
+  modifier_map Mod4 { Super_L };
   key.type = "ONE_LEVEL";
   key <CAPS> { [ ISO_Level5_Shift ] };
   key <RTSH> { [ Return ] };
   key.type = "MEGAMOD";
-  key <ESC> { [
-    NoSymbol, NoSymbol, NoSymbol, NoSymbol, Hyper_L, Hyper_L, Hyper_L
-  ] };
   key <TAB> { [
-    Escape, Escape, Escape, Escape, ISO_Level3_Shift, ISO_Level3_Shift, ISO_Level3_Shift
+    Escape, Escape, Escape, Escape,
+    ISO_Level3_Shift, ISO_Level3_Shift, ISO_Level3_Shift
   ] };
-  key <SPCE> { [
-    NoSymbol, NoSymbol, NoSymbol, NoSymbol, Tab, ISO_Left_Tab, NoSymbol
+  key <HELP> { [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Tab, Tab ] };
+  key <SPCE> { actions = [
+    NoAction(),
+    NoAction(),
+    NoAction(),
+    NoAction(),
+    RedirectKey(keycode=<HELP>),
+    RedirectKey(keycode=<HELP>, modifiers=Shift)
   ] };
   key <AE01> {
     symbols[Group1] =
