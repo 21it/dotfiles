@@ -27,27 +27,27 @@ xkb_symbols "local" {
   };
   key <AE02> {
     symbols[Group1] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F2, XF86MonBrightnessDown ],
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F2, NoSymbol ],
     symbols[Group2] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F2, XF86MonBrightnessDown ]
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F2, NoSymbol ]
   };
   key <AE03> {
     symbols[Group1] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F3, XF86MonBrightnessUp ],
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F3, XF86MonBrightnessDown ],
     symbols[Group2] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F3, XF86MonBrightnessUp ]
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F3, XF86MonBrightnessDown ]
   };
   key <AE04> {
     symbols[Group1] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F4, XF86AudioMicMute ],
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F4, XF86MonBrightnessUp ],
     symbols[Group2] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F4, XF86AudioMicMute ]
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F4, XF86MonBrightnessUp ]
   };
   key <AE05> {
     symbols[Group1] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F5, NoSymbol ],
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F5, XF86AudioMicMute ],
     symbols[Group2] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F5, NoSymbol ]
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F5, XF86AudioMicMute ]
   };
   key <AE06> {
     symbols[Group1] =
@@ -95,7 +95,7 @@ xkb_symbols "local" {
     symbols[Group1] =
       [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, grave, asciitilde ],
     symbols[Group2] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, grave, asciitilde ]
+      [ Cyrillic_io, Cyrillic_IO, NoSymbol, NoSymbol, grave, asciitilde ]
   };
   key <AD06> {
     symbols[Group1] =
