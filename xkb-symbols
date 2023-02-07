@@ -21,15 +21,15 @@ xkb_symbols "local" {
   ] };
   key <AE01> {
     symbols[Group1] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F1, NoSymbol ],
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F1 ],
     symbols[Group2] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F1, NoSymbol ]
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F1 ]
   };
   key <AE02> {
     symbols[Group1] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F2, NoSymbol ],
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F2 ],
     symbols[Group2] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F2, NoSymbol ]
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F2 ]
   };
   key <AE03> {
     symbols[Group1] =
@@ -51,9 +51,9 @@ xkb_symbols "local" {
   };
   key <AE06> {
     symbols[Group1] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F6, NoSymbol ],
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F6 ],
     symbols[Group2] =
-      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F6, NoSymbol ]
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, F6 ]
   };
   key <AE07> {
     symbols[Group1] =
@@ -145,6 +145,12 @@ xkb_symbols "local" {
     symbols[Group2] =
       [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Right, End, KP_6 ]
   };
+  key <AB06> {
+    symbols[Group1] =
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, Pointer_Button1 ],
+    symbols[Group2] =
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, Pointer_Button1 ]
+  };
   key <AB07> {
     symbols[Group1] =
       [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Delete, Delete, XF86ScrollDown ],
@@ -156,5 +162,11 @@ xkb_symbols "local" {
       [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Insert, Insert, XF86ScrollUp ],
     symbols[Group2] =
       [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, Insert, Insert, XF86ScrollUp ]
+  };
+  key <AB09> {
+    symbols[Group1] =
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, Pointer_Button3 ],
+    symbols[Group2] =
+      [ NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, Pointer_Button3 ]
   };
 };
